@@ -1,0 +1,694 @@
+2023-03-14 04:35:18,445 - DEBUG [provisioning-task-0:i.c.c.i.p.t.ProvisioningTask@126] - Executing PROVISION subtask REQUESTING_CREATE for program run program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379.
+2023-03-14 04:35:19,253 - DEBUG [provisioning-task-0:i.c.c.r.s.p.d.DataprocProvisioner@250] - Not checking cluster reuse, enabled: true, skip delete: false, idle ttl: 240, reuse threshold: 15
+2023-03-14 04:35:19,798 - INFO  [provisioning-task-0:i.c.c.r.s.p.d.DataprocProvisioner@203] - Creating Dataproc cluster cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379 in project dfperxmltojson, in region us-west1, with image 2.0, with labels {goog-datafusion-version=6_8, cdap-version=6_8_1-1677149596172, goog-datafusion-edition=basic}, endpoint dataproc.googleapis.com:443
+2023-03-14 04:35:20,864 - DEBUG [provisioning-task-0:i.c.c.r.s.p.d.PredefinedAutoScaling@137] - The autoscaling policy doesn't exists
+2023-03-14 04:35:23,061 - WARN  [provisioning-task-0:i.c.c.r.s.p.d.DataprocProvisioner@211] - Encountered 1 warning while creating Dataproc cluster:
+For PD-Standard without local SSDs, we strongly recommend provisioning 1TB or larger to ensure consistently high I/O performance. See https://cloud.google.com/compute/docs/disks/performance for information on disk I/O performance.
+2023-03-14 04:35:23,065 - DEBUG [provisioning-task-0:i.c.c.i.p.t.ProvisioningTask@130] - Completed PROVISION subtask REQUESTING_CREATE for program run program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379.
+2023-03-14 04:36:27,248 - DEBUG [provisioning-task-1:i.c.c.i.p.t.ProvisioningTask@126] - Executing PROVISION subtask POLLING_CREATE for program run program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379.
+2023-03-14 04:36:27,422 - DEBUG [provisioning-task-1:i.c.c.i.p.t.ProvisioningTask@130] - Completed PROVISION subtask POLLING_CREATE for program run program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379.
+2023-03-14 04:36:58,858 - DEBUG [provisioning-task-8:i.c.c.i.p.t.ProvisioningTask@126] - Executing PROVISION subtask POLLING_CREATE for program run program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379.
+2023-03-14 04:36:58,965 - DEBUG [provisioning-task-8:i.c.c.i.p.t.ProvisioningTask@130] - Completed PROVISION subtask POLLING_CREATE for program run program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379.
+2023-03-14 04:37:30,328 - DEBUG [provisioning-task-3:i.c.c.i.p.t.ProvisioningTask@126] - Executing PROVISION subtask POLLING_CREATE for program run program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379.
+2023-03-14 04:37:30,430 - DEBUG [provisioning-task-3:i.c.c.i.p.t.ProvisioningTask@130] - Completed PROVISION subtask POLLING_CREATE for program run program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379.
+2023-03-14 04:37:41,143 - DEBUG [provisioning-task-8:i.c.c.i.p.t.ProvisioningTask@117] - Completed PROVISION task for program run program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379.
+2023-03-14 04:37:45,574 - INFO  [program-start-2:i.c.c.i.a.r.d.DistributedProgramRunner@591] - Starting Workflow Program 'DataPipelineWorkflow' with Arguments [logical.start.time=1678768517529, system.profile.name=SYSTEM:autoscaling-dataproc], with debugging false
+2023-03-14 04:37:45,687 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@521] - Create and copy application.jar
+2023-03-14 04:37:49,403 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@529] - Done application.jar
+2023-03-14 04:37:49,404 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@542] - Create and copy resources.jar
+2023-03-14 04:37:49,434 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@545] - Done resources.jar
+2023-03-14 04:37:49,435 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@585] - Populating Runnable LocalFiles
+2023-03-14 04:37:49,436 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@592] - Added file file:/data/tmp/1678768662968-0/cConf.xml
+2023-03-14 04:37:49,437 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@592] - Added file file:/data/tmp/1678768662968-0/logback.xml
+2023-03-14 04:37:49,437 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@592] - Added file file:/data/tmp/1678768662968-0/1678768663217-0/artifacts.jar
+2023-03-14 04:37:49,437 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@592] - Added file file:/data/tmp/1678768662968-0/appSpec1419766281671181191.json
+2023-03-14 04:37:49,437 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@592] - Added file file:/data/tmp/workflow.default.Test_BigQuery.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379/program.jar
+2023-03-14 04:37:49,437 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@592] - Added file file:/data/tmp/1678768662968-0/1678768663217-0/artifacts.jar
+2023-03-14 04:37:49,438 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@592] - Added file file:/data/tmp/1678768662968-0/hConf.xml
+2023-03-14 04:37:49,438 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@592] - Added file file:/data/tmp/1678768662968-0/program.options.json
+2023-03-14 04:37:49,438 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@595] - Done Runnable LocalFiles
+2023-03-14 04:37:49,439 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@613] - Creating /data/tmp/9efaa893-c221-11ed-ae71-2a6229ece3795575244445029412362/runtime.config.jar8373575796668264107/twillSpec.json
+2023-03-14 04:37:49,448 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@633] - Done /data/tmp/9efaa893-c221-11ed-ae71-2a6229ece3795575244445029412362/runtime.config.jar8373575796668264107/twillSpec.json
+2023-03-14 04:37:49,449 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@644] - Creating /data/tmp/9efaa893-c221-11ed-ae71-2a6229ece3795575244445029412362/runtime.config.jar8373575796668264107/logback-template.xml
+2023-03-14 04:37:49,449 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@648] - Done /data/tmp/9efaa893-c221-11ed-ae71-2a6229ece3795575244445029412362/runtime.config.jar8373575796668264107/logback-template.xml
+2023-03-14 04:37:49,451 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@550] - Create and copy runtime.config.jar
+2023-03-14 04:37:49,454 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.AbstractRuntimeTwillPreparer@572] - Done runtime.config.jar
+2023-03-14 04:37:49,519 - INFO  [runtime-scheduler-1:i.c.c.i.a.r.d.r.RuntimeJobTwillPreparer@107] - JVM properties {logback.configurationFile=logback.xml, CDAP_LOG_DIR=<LOG_DIR>, twill.container.class.loader=io.cdap.cdap.common.app.MainClassLoader}
+2023-03-14 04:37:49,522 - INFO  [runtime-scheduler-1:i.c.c.i.a.r.d.r.RuntimeJobTwillPreparer@97] - Starting runnable DataPipelineWorkflow for runId program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379 with job manager.
+2023-03-14 04:37:49,523 - DEBUG [runtime-scheduler-1:i.c.c.r.s.r.DataprocRuntimeJobManager@242] - Launching run 9efaa893-c221-11ed-ae71-2a6229ece379 with following configurations: cluster cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379, project dfperxmltojson, region us-west1, bucket df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa.
+2023-03-14 04:37:51,109 - DEBUG [provisioning-context-6:i.c.c.r.s.r.DataprocRuntimeJobManager@550] - Uploading a file of size 102543 bytes from file:/data/tmp/1678768662968-0/appSpec1419766281671181191.json to gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/9efaa893-c221-11ed-ae71-2a6229ece379/appSpec.json of region bucket type located at US-WEST1
+2023-03-14 04:37:51,109 - DEBUG [provisioning-context-7:i.c.c.r.s.r.DataprocRuntimeJobManager@550] - Uploading a file of size 88818 bytes from file:/data/tmp/1678768662968-0/cConf.xml to gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/9efaa893-c221-11ed-ae71-2a6229ece379/cConf.xml of region bucket type located at US-WEST1
+2023-03-14 04:37:51,109 - DEBUG [provisioning-context-1:i.c.c.r.s.r.DataprocRuntimeJobManager@550] - Uploading a file of size 289737374 bytes from file:/data/tmp/1678768662968-0/1678768663217-0/artifacts.jar to gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/cached-artifacts/artifacts_e05a6033858b1b079c55b0c5376f924050a2a6810509f537e0c3236936afdf75_1680652800000 of region bucket type located at US-WEST1
+2023-03-14 04:37:51,109 - DEBUG [provisioning-context-8:i.c.c.r.s.r.DataprocRuntimeJobManager@550] - Uploading a file of size 33530 bytes from file:/data/tmp/9efaa893-c221-11ed-ae71-2a6229ece3795575244445029412362/resources.jar to gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/9efaa893-c221-11ed-ae71-2a6229ece379/resources.jar of region bucket type located at US-WEST1
+2023-03-14 04:37:51,110 - DEBUG [provisioning-context-5:i.c.c.r.s.r.DataprocRuntimeJobManager@550] - Uploading a file of size 172147 bytes from file:/data/tmp/1678768662968-0/hConf.xml to gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/9efaa893-c221-11ed-ae71-2a6229ece379/hConf.xml of region bucket type located at US-WEST1
+2023-03-14 04:37:51,122 - DEBUG [provisioning-context-0:i.c.c.r.s.r.DataprocRuntimeJobManager@550] - Uploading a file of size 289737374 bytes from file:/data/tmp/1678768662968-0/1678768663217-0/artifacts.jar to gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/cached-artifacts/artifacts_archive_e05a6033858b1b079c55b0c5376f924050a2a6810509f537e0c3236936afdf75_1680652800000.jar of region bucket type located at US-WEST1
+2023-03-14 04:37:51,122 - DEBUG [provisioning-context-3:i.c.c.r.s.r.DataprocRuntimeJobManager@550] - Uploading a file of size 10341463 bytes from file:/data/tmp/workflow.default.Test_BigQuery.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379/program.jar to gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/cached-artifacts/program_366688bda18303296fc427af534a192eb32fd810718b7d9d11c6eab7ef1ca947_1678579200000.jar of region bucket type located at US-WEST1
+2023-03-14 04:37:51,122 - DEBUG [provisioning-context-2:i.c.c.r.s.r.DataprocRuntimeJobManager@550] - Uploading a file of size 55267715 bytes from file:/data/tmp/runner.cache6003770298404426256/65206652e8550d44362557de0bb879a6-application.jar to gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/cached-artifacts/6.8.1/application.jar of region bucket type located at US-WEST1
+2023-03-14 04:37:51,122 - DEBUG [provisioning-context-9:i.c.c.r.s.r.DataprocRuntimeJobManager@550] - Uploading a file of size 11281 bytes from file:/tmp/dataproc.launcher.cache/launcher.jar to gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/cached-artifacts/6.8.1/launcher.jar of region bucket type located at US-WEST1
+2023-03-14 04:37:51,123 - DEBUG [provisioning-context-4:i.c.c.r.s.r.DataprocRuntimeJobManager@550] - Uploading a file of size 10255835 bytes from file:/tmp/dataproc.launcher.cache/twill.jar to gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/cached-artifacts/6.8.1/twill.jar of region bucket type located at US-WEST1
+2023-03-14 04:37:51,243 - DEBUG [provisioning-context-8:i.c.c.r.s.r.DataprocRuntimeJobManager@593] - Successfully uploaded file file:/data/tmp/9efaa893-c221-11ed-ae71-2a6229ece3795575244445029412362/resources.jar to gs://gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/9efaa893-c221-11ed-ae71-2a6229ece379/resources.jar in 131 ms.
+2023-03-14 04:37:51,245 - DEBUG [provisioning-context-6:i.c.c.r.s.r.DataprocRuntimeJobManager@593] - Successfully uploaded file file:/data/tmp/1678768662968-0/appSpec1419766281671181191.json to gs://gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/9efaa893-c221-11ed-ae71-2a6229ece379/appSpec.json in 133 ms.
+2023-03-14 04:37:51,250 - DEBUG [provisioning-context-9:i.c.c.r.s.r.DataprocRuntimeJobManager@593] - Successfully uploaded file file:/tmp/dataproc.launcher.cache/launcher.jar to gs://gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/cached-artifacts/6.8.1/launcher.jar in 125 ms.
+2023-03-14 04:37:51,252 - DEBUG [provisioning-context-7:i.c.c.r.s.r.DataprocRuntimeJobManager@593] - Successfully uploaded file file:/data/tmp/1678768662968-0/cConf.xml to gs://gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/9efaa893-c221-11ed-ae71-2a6229ece379/cConf.xml in 140 ms.
+2023-03-14 04:37:51,257 - DEBUG [provisioning-context-5:i.c.c.r.s.r.DataprocRuntimeJobManager@593] - Successfully uploaded file file:/data/tmp/1678768662968-0/hConf.xml to gs://gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/9efaa893-c221-11ed-ae71-2a6229ece379/hConf.xml in 145 ms.
+2023-03-14 04:37:51,271 - DEBUG [provisioning-context-6:i.c.c.r.s.r.DataprocRuntimeJobManager@550] - Uploading a file of size 3229 bytes from file:/data/tmp/1678768662968-0/program.options.json to gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/9efaa893-c221-11ed-ae71-2a6229ece379/program.options.json of region bucket type located at US-WEST1
+2023-03-14 04:37:51,277 - DEBUG [provisioning-context-8:i.c.c.r.s.r.DataprocRuntimeJobManager@550] - Uploading a file of size 4013 bytes from file:/data/tmp/1678768662968-0/logback.xml to gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/9efaa893-c221-11ed-ae71-2a6229ece379/logback.xml of region bucket type located at US-WEST1
+2023-03-14 04:37:51,277 - DEBUG [provisioning-context-9:i.c.c.r.s.r.DataprocRuntimeJobManager@550] - Uploading a file of size 2737 bytes from file:/data/tmp/9efaa893-c221-11ed-ae71-2a6229ece3795575244445029412362/runtime.config.jar3596298471850157397.tmp to gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/9efaa893-c221-11ed-ae71-2a6229ece379/runtime.config.jar of region bucket type located at US-WEST1
+2023-03-14 04:37:51,349 - DEBUG [provisioning-context-4:i.c.c.r.s.r.DataprocRuntimeJobManager@593] - Successfully uploaded file file:/tmp/dataproc.launcher.cache/twill.jar to gs://gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/cached-artifacts/6.8.1/twill.jar in 225 ms.
+2023-03-14 04:37:51,383 - DEBUG [provisioning-context-8:i.c.c.r.s.r.DataprocRuntimeJobManager@593] - Successfully uploaded file file:/data/tmp/1678768662968-0/logback.xml to gs://gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/9efaa893-c221-11ed-ae71-2a6229ece379/logback.xml in 104 ms.
+2023-03-14 04:37:51,389 - DEBUG [provisioning-context-9:i.c.c.r.s.r.DataprocRuntimeJobManager@593] - Successfully uploaded file file:/data/tmp/9efaa893-c221-11ed-ae71-2a6229ece3795575244445029412362/runtime.config.jar3596298471850157397.tmp to gs://gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/9efaa893-c221-11ed-ae71-2a6229ece379/runtime.config.jar in 110 ms.
+2023-03-14 04:37:51,390 - DEBUG [provisioning-context-6:i.c.c.r.s.r.DataprocRuntimeJobManager@593] - Successfully uploaded file file:/data/tmp/1678768662968-0/program.options.json to gs://gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/9efaa893-c221-11ed-ae71-2a6229ece379/program.options.json in 117 ms.
+2023-03-14 04:37:51,398 - DEBUG [provisioning-context-3:i.c.c.r.s.r.DataprocRuntimeJobManager@593] - Successfully uploaded file file:/data/tmp/workflow.default.Test_BigQuery.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379/program.jar to gs://gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/cached-artifacts/program_366688bda18303296fc427af534a192eb32fd810718b7d9d11c6eab7ef1ca947_1678579200000.jar in 275 ms.
+2023-03-14 04:37:51,874 - DEBUG [provisioning-context-2:i.c.c.r.s.r.DataprocRuntimeJobManager@593] - Successfully uploaded file file:/data/tmp/runner.cache6003770298404426256/65206652e8550d44362557de0bb879a6-application.jar to gs://gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/cached-artifacts/6.8.1/application.jar in 750 ms.
+2023-03-14 04:37:54,597 - DEBUG [provisioning-context-0:i.c.c.r.s.r.DataprocRuntimeJobManager@593] - Successfully uploaded file file:/data/tmp/1678768662968-0/1678768663217-0/artifacts.jar to gs://gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/cached-artifacts/artifacts_archive_e05a6033858b1b079c55b0c5376f924050a2a6810509f537e0c3236936afdf75_1680652800000.jar in 3473 ms.
+2023-03-14 04:37:54,791 - DEBUG [provisioning-context-1:i.c.c.r.s.r.DataprocRuntimeJobManager@593] - Successfully uploaded file file:/data/tmp/1678768662968-0/1678768663217-0/artifacts.jar to gs://gs://df-16725322085074097760-iktovtwcdyi63be5aizbbqaaaa/cdap-job/cached-artifacts/artifacts_e05a6033858b1b079c55b0c5376f924050a2a6810509f537e0c3236936afdf75_1680652800000 in 3679 ms.
+2023-03-14 04:37:55,030 - DEBUG [runtime-scheduler-1:i.c.c.r.s.r.DataprocRuntimeJobManager@313] - Successfully submitted hadoop job default_Test_BigQuery_DataPipelineWorkflow_9efaa893-c221-11ed-ae71-2a6229ece379 to cluster cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379.
+2023-03-14 04:37:55,032 - DEBUG [runtime-scheduler-1:i.c.c.i.a.r.d.r.RemoteExecutionTwillRunnerService@607] - Startup task completed for program run program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379
+2023-03-14 04:38:16,632 - DEBUG [main:i.c.c.i.a.r.m.RuntimeMonitors@119] - Setting runtime service routing base URI to https://r-xml-to-json-dfperxmltojson-dot-usw1.datafusion.googleusercontent.com/v3Internal/runtime/namespaces/default/apps/Test_BigQuery/versions/-SNAPSHOT/workflows/DataPipelineWorkflow/runs/9efaa893-c221-11ed-ae71-2a6229ece379/services/
+2023-03-14 04:38:17,787 - INFO  [TMSLogPublisher:i.c.c.m.s.l.LevelDBTableFactory@173] - Messaging metadata table created at data/messaging/namespace:system.tms.meta
+2023-03-14 04:38:18,923 - DEBUG [main:i.c.c.i.a.r.d.r.DefaultRuntimeJob@566] - Starting core service LogAppenderLoaderService [NEW]
+2023-03-14 04:38:18,925 - DEBUG [main:i.c.c.i.a.r.d.r.DefaultRuntimeJob@566] - Starting core service CoreMessagingService [NEW]
+2023-03-14 04:38:18,969 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.audit
+2023-03-14 04:38:18,970 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.metadata
+2023-03-14 04:38:18,972 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.dataevent
+2023-03-14 04:38:18,976 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.metrics0
+2023-03-14 04:38:18,977 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.metrics1
+2023-03-14 04:38:18,979 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.metrics2
+2023-03-14 04:38:18,991 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.metrics3
+2023-03-14 04:38:18,993 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.metrics4
+2023-03-14 04:38:18,994 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.metrics5
+2023-03-14 04:38:18,996 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.metrics6
+2023-03-14 04:38:18,997 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.metrics7
+2023-03-14 04:38:18,999 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.metrics8
+2023-03-14 04:38:19,001 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.metrics9
+2023-03-14 04:38:19,002 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.metricsadmin
+2023-03-14 04:38:19,004 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.timeevent
+2023-03-14 04:38:19,005 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.programstatusevent
+2023-03-14 04:38:19,007 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.programstatusevent0
+2023-03-14 04:38:19,008 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.programstatusrecordevent
+2023-03-14 04:38:19,009 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.logs0
+2023-03-14 04:38:19,011 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.logs1
+2023-03-14 04:38:19,012 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.logs2
+2023-03-14 04:38:19,013 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.logs3
+2023-03-14 04:38:19,015 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.logs4
+2023-03-14 04:38:19,016 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.logs5
+2023-03-14 04:38:19,018 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.logs6
+2023-03-14 04:38:19,019 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.logs7
+2023-03-14 04:38:19,020 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.logs8
+2023-03-14 04:38:19,022 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.logs9
+2023-03-14 04:38:19,024 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.preview
+2023-03-14 04:38:19,025 - DEBUG [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@306] - System topic created: topic:system.previewlog0
+2023-03-14 04:38:19,026 - INFO  [CoreMessagingService STARTING:i.c.c.m.s.CoreMessagingService@234] - Core Messaging Service started
+2023-03-14 04:38:19,026 - DEBUG [main:i.c.c.i.a.r.d.r.DefaultRuntimeJob@566] - Starting core service MessagingHttpService [NEW]
+2023-03-14 04:38:19,033 - INFO  [MessagingHttpService STARTING:i.c.h.NettyHttpService@181] - Starting HTTP Service messaging.service at address cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m.us-west1-b.c.dfperxmltojson.internal/10.138.0.4:0
+2023-03-14 04:38:19,243 - DEBUG [MessagingHttpService STARTING:i.c.c.i.a.r.d.r.RemoteExecutionDiscoveryService@76] - Discoverable messaging.service with address cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m.us-west1-b.c.dfperxmltojson.internal/10.138.0.4:35815 added to configuration with payload https://
+2023-03-14 04:38:19,244 - DEBUG [MessagingHttpService STARTING:i.c.c.i.a.r.d.r.RemoteExecutionDiscoveryService@142] - Update discoverable messaging.service with address cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m.us-west1-b.c.dfperxmltojson.internal/10.138.0.4:35815 and payload https://
+2023-03-14 04:38:19,247 - INFO  [MessagingHttpService STARTING:i.c.c.m.s.MessagingHttpService@107] - Messaging HTTP server started on cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m.us-west1-b.c.dfperxmltojson.internal/10.138.0.4:35815
+2023-03-14 04:38:19,247 - DEBUG [main:i.c.c.i.a.r.d.r.DefaultRuntimeJob@566] - Starting core service MessagingMetricsCollectionService [NEW]
+2023-03-14 04:38:19,250 - DEBUG [main:i.c.c.i.a.r.d.r.DefaultRuntimeJob@566] - Starting core service RuntimeClientService [NEW]
+2023-03-14 04:38:19,251 - DEBUG [RuntimeClientService:i.c.c.c.s.AbstractRetryableScheduledService@99] - Starting scheduled service RuntimeClientService
+2023-03-14 04:38:19,252 - DEBUG [main:i.c.c.i.a.r.d.r.DefaultRuntimeJob@566] - Starting core service ProfileMetricService [NEW]
+2023-03-14 04:38:19,496 - DEBUG [main:i.c.c.a.r.s.SparkProgramRuntimeProvider@169] - using sparkCompat SPARK3_2_12
+2023-03-14 04:38:19,658 - DEBUG [main:i.c.c.a.r.s.SparkPackageUtils@317] - Located Spark library in in /usr/lib/spark/jars
+2023-03-14 04:38:21,343 - DEBUG [RuntimeClientService:i.c.c.i.a.r.d.r.RemoteExecutionDiscoveryService@142] - Update discoverable runtime with address r-xml-to-json-dfperxmltojson-dot-usw1.datafusion.googleusercontent.com/74.125.195.132:443 and payload https://
+2023-03-14 04:38:22,603 - DEBUG [main:i.c.c.i.a.r.d.r.RemoteExecutionDiscoveryService@142] - Update discoverable svc.system.pipeline.studio with address svc.system.pipeline.studio:0 and payload https://
+2023-03-14 04:38:29,163 - DEBUG [main:i.c.c.a.r.s.SparkProgramRuntimeProvider@169] - using sparkCompat SPARK3_2_12
+2023-03-14 04:38:29,353 - WARN  [main:i.c.c.c.c.Configuration@1814] - file:/tmp/default_Test_BigQuery_DataPipelineWorkflow_9efaa893-c221-11ed-ae71-2a6229ece379/cConf.xml:an attempt to override final parameter: support.bundle.max.instances;  Ignoring.
+2023-03-14 04:38:29,354 - WARN  [main:i.c.c.c.c.Configuration@1814] - file:/tmp/default_Test_BigQuery_DataPipelineWorkflow_9efaa893-c221-11ed-ae71-2a6229ece379/cConf.xml:an attempt to override final parameter: messaging.system.topics;  Ignoring.
+2023-03-14 04:38:29,357 - WARN  [main:i.c.c.c.c.Configuration@1814] - file:/tmp/default_Test_BigQuery_DataPipelineWorkflow_9efaa893-c221-11ed-ae71-2a6229ece379/cConf.xml:an attempt to override final parameter: messaging.max.instances;  Ignoring.
+2023-03-14 04:38:29,360 - WARN  [main:i.c.c.c.c.Configuration@1814] - file:/tmp/default_Test_BigQuery_DataPipelineWorkflow_9efaa893-c221-11ed-ae71-2a6229ece379/cConf.xml:an attempt to override final parameter: app.program.runtime.monitor.server.info.file;  Ignoring.
+2023-03-14 04:38:29,370 - DEBUG [main:i.c.c.a.r.s.SparkProgramRuntimeProvider@169] - using sparkCompat SPARK3_2_12
+2023-03-14 04:38:31,288 - DEBUG [main:i.c.c.a.r.s.SparkPackageUtils@317] - Located Spark library in in /usr/lib/spark/jars
+2023-03-14 04:38:39,598 - DEBUG [main:i.c.c.a.r.s.SparkPackageUtils@259] - Adding files from /etc/hadoop/conf to __spark_conf__.zip
+2023-03-14 04:38:39,842 - DEBUG [main:i.c.c.i.a.r.d.ProgramTwillApplication@127] - Localizing file for program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379: pyspark.zip LocalizeResource{archive=false, uri=file:/usr/lib/spark/python/lib/pyspark.zip}
+2023-03-14 04:38:39,848 - DEBUG [main:i.c.c.i.a.r.d.ProgramTwillApplication@127] - Localizing file for program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379: logback.xml LocalizeResource{archive=false, uri=file:/tmp/default_Test_BigQuery_DataPipelineWorkflow_9efaa893-c221-11ed-ae71-2a6229ece379/data/tmp/1678768709361-0/logback.xml}
+2023-03-14 04:38:39,851 - DEBUG [main:i.c.c.i.a.r.d.ProgramTwillApplication@127] - Localizing file for program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379: __spark_conf__ LocalizeResource{archive=true, uri=file:/tmp/default_Test_BigQuery_DataPipelineWorkflow_9efaa893-c221-11ed-ae71-2a6229ece379/data/tmp/1678768709361-0/__spark_conf__8192854375622975738.zip}
+2023-03-14 04:38:39,855 - DEBUG [main:i.c.c.i.a.r.d.ProgramTwillApplication@127] - Localizing file for program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379: appSpec.json LocalizeResource{archive=false, uri=file:/tmp/default_Test_BigQuery_DataPipelineWorkflow_9efaa893-c221-11ed-ae71-2a6229ece379/data/tmp/1678768709361-0/appSpec1855052173940035115.json}
+2023-03-14 04:38:39,856 - DEBUG [main:i.c.c.i.a.r.d.ProgramTwillApplication@127] - Localizing file for program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379: hConf.xml LocalizeResource{archive=false, uri=file:/tmp/default_Test_BigQuery_DataPipelineWorkflow_9efaa893-c221-11ed-ae71-2a6229ece379/data/tmp/1678768709361-0/hConf.xml}
+2023-03-14 04:38:39,859 - DEBUG [main:i.c.c.i.a.r.d.ProgramTwillApplication@127] - Localizing file for program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379: program.options.json LocalizeResource{archive=false, uri=file:/tmp/default_Test_BigQuery_DataPipelineWorkflow_9efaa893-c221-11ed-ae71-2a6229ece379/data/tmp/1678768709361-0/program.options.json}
+2023-03-14 04:38:39,860 - DEBUG [main:i.c.c.i.a.r.d.ProgramTwillApplication@127] - Localizing file for program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379: cConf.xml LocalizeResource{archive=false, uri=file:/tmp/default_Test_BigQuery_DataPipelineWorkflow_9efaa893-c221-11ed-ae71-2a6229ece379/data/tmp/1678768709361-0/cConf.xml}
+2023-03-14 04:38:39,860 - DEBUG [main:i.c.c.i.a.r.d.ProgramTwillApplication@127] - Localizing file for program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379: artifacts_archive.jar LocalizeResource{archive=false, uri=file:/tmp/default_Test_BigQuery_DataPipelineWorkflow_9efaa893-c221-11ed-ae71-2a6229ece379/artifacts_archive_e05a6033858b1b079c55b0c5376f924050a2a6810509f537e0c3236936afdf75_1680652800000.jar}
+2023-03-14 04:38:39,861 - DEBUG [main:i.c.c.i.a.r.d.ProgramTwillApplication@127] - Localizing file for program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379: spark-defaults.conf LocalizeResource{archive=false, uri=file:/tmp/default_Test_BigQuery_DataPipelineWorkflow_9efaa893-c221-11ed-ae71-2a6229ece379/data/tmp/1678768709361-0/spark-defaults.conf1005651693184657557.tmp}
+2023-03-14 04:38:39,863 - DEBUG [main:i.c.c.i.a.r.d.ProgramTwillApplication@127] - Localizing file for program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379: spark.archive-spark3_2.12-3.2.3.zip LocalizeResource{archive=true, uri=hdfs://cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m/framework/spark/spark.archive-spark3_2.12-3.2.3.zip}
+2023-03-14 04:38:39,863 - DEBUG [main:i.c.c.i.a.r.d.ProgramTwillApplication@127] - Localizing file for program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379: program_366688bda18303296fc427af534a192eb32fd810718b7d9d11c6eab7ef1ca947_1678579200000.jar LocalizeResource{archive=false, uri=file:/tmp/default_Test_BigQuery_DataPipelineWorkflow_9efaa893-c221-11ed-ae71-2a6229ece379/program_366688bda18303296fc427af534a192eb32fd810718b7d9d11c6eab7ef1ca947_1678579200000.jar}
+2023-03-14 04:38:39,867 - DEBUG [main:i.c.c.i.a.r.d.ProgramTwillApplication@127] - Localizing file for program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379: py4j-0.10.9-src.zip LocalizeResource{archive=false, uri=file:/usr/lib/spark/python/lib/py4j-0.10.9-src.zip}
+2023-03-14 04:38:39,867 - DEBUG [main:i.c.c.i.a.r.d.ProgramTwillApplication@127] - Localizing file for program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379: artifacts LocalizeResource{archive=true, uri=file:/tmp/default_Test_BigQuery_DataPipelineWorkflow_9efaa893-c221-11ed-ae71-2a6229ece379/artifacts_archive_e05a6033858b1b079c55b0c5376f924050a2a6810509f537e0c3236936afdf75_1680652800000.jar}
+2023-03-14 04:38:39,901 - INFO  [main:i.c.c.i.a.r.d.DistributedProgramRunner@591] - Starting Workflow Program 'DataPipelineWorkflow' with Arguments [logical.start.time=1678768517529, system.profile.name=SYSTEM:autoscaling-dataproc], with debugging false
+2023-03-14 04:38:50,007 - INFO  [ STARTING:o.a.t.y.YarnTwillController@120] - Application workflow.default.Test_BigQuery.DataPipelineWorkflow with id application_1678768605365_0001 submitted
+2023-03-14 04:39:05,358 - INFO  [ STARTING:o.a.t.y.YarnTwillController@132] - Yarn application workflow.default.Test_BigQuery.DataPipelineWorkflow application_1678768605365_0001 is in state RUNNING
+2023-03-14 04:39:05,371 - DEBUG [main:i.c.c.i.a.r.d.DistributedProgramRunner@787] - Cleanup tmp files for program:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow: /tmp/default_Test_BigQuery_DataPipelineWorkflow_9efaa893-c221-11ed-ae71-2a6229ece379/data/tmp/1678768709361-0
+2023-03-14 04:39:05,383 - INFO  [main:i.c.c.i.a.r.d.AbstractTwillProgramController@69] - Twill program running: program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379, twill runId: 6862e742-f53c-46fb-baed-fc847b6b752c
+2023-03-14 04:39:07,522 - INFO  [ApplicationMasterService:o.a.t.i.a.ApplicationMasterService@734] - Request 1 containers with capability <memory:1024, vCores:1> for runnable DataPipelineWorkflow
+2023-03-14 04:39:07,592 - DEBUG [TMSLogPublisher:i.c.c.i.a.r.d.r.RemoteExecutionDiscoveryService@142] - Update discoverable messaging.service with address cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m.us-west1-b.c.dfperxmltojson.internal/10.138.0.4:35815 and payload https://
+2023-03-14 04:39:09,629 - INFO  [ApplicationMasterService:o.a.t.i.a.ApplicationMasterService@756] - Container allocated: Container: [ContainerId: container_1678768605365_0001_01_000002, AllocationRequestId: 0, Version: 0, NodeId: cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-w-1.us-west1-b.c.dfperxmltojson.internal:8026, NodeHttpAddress: cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-w-1.us-west1-b.c.dfperxmltojson.internal:8042, Resource: <memory:1024, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service: 10.138.0.2:8026 }, ExecutionType: GUARANTEED, ]
+2023-03-14 04:39:09,630 - INFO  [ApplicationMasterService:o.a.t.i.a.ApplicationMasterService@763] - Starting runnable DataPipelineWorkflow in Container: [ContainerId: container_1678768605365_0001_01_000002, AllocationRequestId: 0, Version: 0, NodeId: cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-w-1.us-west1-b.c.dfperxmltojson.internal:8026, NodeHttpAddress: cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-w-1.us-west1-b.c.dfperxmltojson.internal:8042, Resource: <memory:1024, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service: 10.138.0.2:8026 }, ExecutionType: GUARANTEED, ]
+2023-03-14 04:39:10,101 - INFO  [ApplicationMasterService:o.a.t.i.a.RunnableProcessLauncher@71] - Launching in container container_1678768605365_0001_01_000002 at cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-w-1.us-west1-b.c.dfperxmltojson.internal:8026, [$JAVA_HOME/bin/java -Djava.io.tmpdir=tmp -Dyarn.container=$YARN_CONTAINER_ID -Dtwill.runnable=$TWILL_APP_NAME.$TWILL_RUNNABLE_NAME -cp launcher.jar:$HADOOP_CONF_DIR -Xmx824m -XX:+UseG1GC -verbose:gc -Xloggc:<LOG_DIR>/gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=1M -XX:+ExitOnOutOfMemoryError -Dlogback.configurationFile=resources.jar/resources/logback.xml -DCDAP_LOG_DIR=<LOG_DIR> -Dlogback.configurationFile=logback.xml -Dtwill.container.class.loader=io.cdap.cdap.common.app.MainClassLoader org.apache.twill.launcher.TwillLauncher org.apache.twill.internal.container.TwillContainerMain true 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr]
+2023-03-14 04:39:10,768 - INFO  [ApplicationMasterService:o.a.t.i.a.ApplicationMasterService@799] - Runnable DataPipelineWorkflow fully provisioned with 1 instances.
+2023-03-14 04:39:30,553 - DEBUG [TwillContainerService:i.c.c.i.a.r.m.RuntimeMonitors@119] - Setting runtime service routing base URI to https://r-xml-to-json-dfperxmltojson-dot-usw1.datafusion.googleusercontent.com/v3Internal/runtime/namespaces/default/apps/Test_BigQuery/versions/-SNAPSHOT/workflows/DataPipelineWorkflow/runs/9efaa893-c221-11ed-ae71-2a6229ece379/services/
+2023-03-14 04:39:30,828 - DEBUG [TMSLogPublisher:i.c.c.i.a.r.d.r.RemoteExecutionDiscoveryService@142] - Update discoverable messaging.service with address cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m.us-west1-b.c.dfperxmltojson.internal/10.138.0.4:35815 and payload https://
+2023-03-14 04:39:36,178 - INFO  [TwillContainerService:i.c.c.i.a.r.d.AbstractProgramTwillRunnable@157] - Runnable initialized: DataPipelineWorkflow
+2023-03-14 04:39:36,213 - INFO  [TwillContainerService:i.c.c.i.a.r.d.AbstractProgramTwillRunnable@241] - Starting program run program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379
+2023-03-14 04:39:40,335 - INFO  [WorkflowDriver:i.c.c.d.SmartWorkflow@448] - Pipeline 'Test_BigQuery' is started by user 'yarn' with arguments {logical.start.time=1678768517529, system.profile.name=SYSTEM:autoscaling-dataproc}
+2023-03-14 04:39:40,423 - INFO  [WorkflowDriver:i.c.c.d.SmartWorkflow@486] - Pipeline 'Test_BigQuery' running
+2023-03-14 04:39:40,465 - DEBUG [WorkflowDriver:i.c.c.i.a.r.w.WorkflowProgramController@71] - Workflow service workflow.default.Test_BigQuery.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379 started
+2023-03-14 04:39:40,468 - INFO  [WorkflowDriver:i.c.c.i.a.r.w.WorkflowDriver@627] - Starting workflow execution for 'DataPipelineWorkflow' with Run id '9efaa893-c221-11ed-ae71-2a6229ece379'
+2023-03-14 04:39:40,524 - DEBUG [action-phase-1-0:i.c.c.a.r.s.SparkProgramRuntimeProvider@169] - using sparkCompat SPARK3_2_12
+2023-03-14 04:39:40,700 - DEBUG [action-phase-1-0:i.c.c.a.r.s.SparkPackageUtils@317] - Located Spark library in in spark.archive-spark3_2.12-3.2.3.zip
+2023-03-14 04:39:40,834 - DEBUG [action-phase-1-0:i.c.c.c.g.DFSLocationModule@76] - Location namespace is /cdap
+2023-03-14 04:39:40,841 - DEBUG [action-phase-1-0:i.c.c.c.g.FileContextProvider@68] - Getting filesystem for user yarn
+2023-03-14 04:39:40,853 - DEBUG [action-phase-1-0:i.c.c.c.g.DFSLocationModule@94] - Location cache path is data/location.cache
+2023-03-14 04:39:40,910 - INFO  [action-phase-1-0:i.c.c.i.a.r.w.WorkflowDriver@341] - Starting Spark Program 'phase-1' in workflow
+2023-03-14 04:39:41,355 - DEBUG [action-phase-1-0:i.c.c.a.r.s.SparkProgramRunner@238] - Starting Spark Job. Context: SparkRuntimeContext{id=program:default.Test_BigQuery.-SNAPSHOT.spark.phase-1, runId=3bf65771-c222-11ed-9bc7-42010a8a0002}
+2023-03-14 04:39:48,045 - ERROR [SparkRunner-phase-1:i.c.c.i.a.r.ProgramControllerServiceAdapter@97] - Spark Program 'phase-1' failed.
+org.apache.tephra.TransactionFailureException: Exception raised from TxRunnable.run() io.cdap.cdap.internal.app.runtime.AbstractContext$$Lambda$65/1756762368@11501a3d
+	at io.cdap.cdap.data2.transaction.Transactions$CacheBasedTransactional.finishExecute(Transactions.java:226)
+	at io.cdap.cdap.data2.transaction.Transactions$CacheBasedTransactional.execute(Transactions.java:211)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.execute(AbstractContext.java:524)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.execute(AbstractContext.java:512)
+	at io.cdap.cdap.app.runtime.spark.BasicSparkClientContext.execute(BasicSparkClientContext.java:347)
+	at io.cdap.cdap.etl.common.submit.SubmitterPlugin.prepareRun(SubmitterPlugin.java:69)
+	at io.cdap.cdap.etl.common.submit.PipelinePhasePreparer.prepare(PipelinePhasePreparer.java:148)
+	at io.cdap.cdap.etl.spark.AbstractSparkPreparer.prepare(AbstractSparkPreparer.java:87)
+	at io.cdap.cdap.etl.spark.batch.SparkPreparer.prepare(SparkPreparer.java:94)
+	at io.cdap.cdap.etl.spark.batch.ETLSpark.initialize(ETLSpark.java:126)
+	at io.cdap.cdap.api.spark.AbstractSpark.initialize(AbstractSpark.java:131)
+	at io.cdap.cdap.api.spark.AbstractSpark.initialize(AbstractSpark.java:33)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService$1.initialize(SparkRuntimeService.java:175)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService$1.initialize(SparkRuntimeService.java:170)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.lambda$initializeProgram$6(AbstractContext.java:612)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.execute(AbstractContext.java:572)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.initializeProgram(AbstractContext.java:609)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService.initialize(SparkRuntimeService.java:532)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService.startUp(SparkRuntimeService.java:217)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$1.run(AbstractExecutionThreadService.java:47)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService.lambda$null$2(SparkRuntimeService.java:507)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.RuntimeException: Unable to access bucket source-753153349896. Ensure you entered the correct bucket path and have permissions for it.
+	at io.cdap.plugin.gcp.gcs.source.GCSSource.prepareRun(GCSSource.java:93)
+	at io.cdap.plugin.gcp.gcs.source.GCSSource.prepareRun(GCSSource.java:61)
+	at io.cdap.cdap.etl.common.plugin.WrappedBatchSource.lambda$prepareRun$0(WrappedBatchSource.java:53)
+	at io.cdap.cdap.etl.common.plugin.Caller$1.call(Caller.java:30)
+	at io.cdap.cdap.etl.common.plugin.StageLoggingCaller.call(StageLoggingCaller.java:40)
+	at io.cdap.cdap.etl.common.plugin.WrappedBatchSource.prepareRun(WrappedBatchSource.java:52)
+	at io.cdap.cdap.etl.common.plugin.WrappedBatchSource.prepareRun(WrappedBatchSource.java:36)
+	at io.cdap.cdap.etl.common.submit.SubmitterPlugin.lambda$prepareRun$2(SubmitterPlugin.java:71)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.lambda$execute$3(AbstractContext.java:527)
+	at io.cdap.cdap.data2.transaction.Transactions$CacheBasedTransactional.finishExecute(Transactions.java:224)
+	... 21 common frames omitted
+Caused by: com.google.cloud.storage.StorageException: 321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist).
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.translate(HttpStorageRpc.java:233)
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.get(HttpStorageRpc.java:425)
+	at com.google.cloud.storage.StorageImpl$4.call(StorageImpl.java:297)
+	at com.google.cloud.storage.StorageImpl$4.call(StorageImpl.java:294)
+	at com.google.api.gax.retrying.DirectRetryingExecutor.submit(DirectRetryingExecutor.java:105)
+	at com.google.cloud.RetryHelper.run(RetryHelper.java:76)
+	at com.google.cloud.RetryHelper.runWithRetries(RetryHelper.java:50)
+	at com.google.cloud.storage.StorageImpl.get(StorageImpl.java:293)
+	at io.cdap.plugin.gcp.gcs.source.GCSSource.prepareRun(GCSSource.java:90)
+	... 30 common frames omitted
+Caused by: com.google.api.client.googleapis.json.GoogleJsonResponseException: 403 Forbidden
+GET https://storage.googleapis.com/storage/v1/b/source-753153349896?projection=full
+{
+  "code" : 403,
+  "errors" : [ {
+    "domain" : "global",
+    "message" : "321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist).",
+    "reason" : "forbidden"
+  } ],
+  "message" : "321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist)."
+}
+	at com.google.api.client.googleapis.json.GoogleJsonResponseException.from(GoogleJsonResponseException.java:146)
+	at com.google.api.client.googleapis.services.json.AbstractGoogleJsonClientRequest.newExceptionOnError(AbstractGoogleJsonClientRequest.java:118)
+	at com.google.api.client.googleapis.services.json.AbstractGoogleJsonClientRequest.newExceptionOnError(AbstractGoogleJsonClientRequest.java:37)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest$1.interceptResponse(AbstractGoogleClientRequest.java:428)
+	at com.google.api.client.http.HttpRequest.execute(HttpRequest.java:1111)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.executeUnparsed(AbstractGoogleClientRequest.java:514)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.executeUnparsed(AbstractGoogleClientRequest.java:455)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.execute(AbstractGoogleClientRequest.java:565)
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.get(HttpStorageRpc.java:422)
+	... 37 common frames omitted
+2023-03-14 04:39:48,048 - ERROR [SparkRunner-phase-1:i.c.c.i.a.r.ProgramControllerServiceAdapter@98] - Spark program 'phase-1' failed with error: 403 Forbidden
+GET https://storage.googleapis.com/storage/v1/b/source-753153349896?projection=full
+{
+  "code" : 403,
+  "errors" : [ {
+    "domain" : "global",
+    "message" : "321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist).",
+    "reason" : "forbidden"
+  } ],
+  "message" : "321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist)."
+}. Please check the system logs for more details.
+com.google.api.client.googleapis.json.GoogleJsonResponseException: 403 Forbidden
+GET https://storage.googleapis.com/storage/v1/b/source-753153349896?projection=full
+{
+  "code" : 403,
+  "errors" : [ {
+    "domain" : "global",
+    "message" : "321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist).",
+    "reason" : "forbidden"
+  } ],
+  "message" : "321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist)."
+}
+	at com.google.api.client.googleapis.json.GoogleJsonResponseException.from(GoogleJsonResponseException.java:146)
+	at com.google.api.client.googleapis.services.json.AbstractGoogleJsonClientRequest.newExceptionOnError(AbstractGoogleJsonClientRequest.java:118)
+	at com.google.api.client.googleapis.services.json.AbstractGoogleJsonClientRequest.newExceptionOnError(AbstractGoogleJsonClientRequest.java:37)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest$1.interceptResponse(AbstractGoogleClientRequest.java:428)
+	at com.google.api.client.http.HttpRequest.execute(HttpRequest.java:1111)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.executeUnparsed(AbstractGoogleClientRequest.java:514)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.executeUnparsed(AbstractGoogleClientRequest.java:455)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.execute(AbstractGoogleClientRequest.java:565)
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.get(HttpStorageRpc.java:422)
+	at com.google.cloud.storage.StorageImpl$4.call(StorageImpl.java:297)
+	at com.google.cloud.storage.StorageImpl$4.call(StorageImpl.java:294)
+	at com.google.api.gax.retrying.DirectRetryingExecutor.submit(DirectRetryingExecutor.java:105)
+	at com.google.cloud.RetryHelper.run(RetryHelper.java:76)
+	at com.google.cloud.RetryHelper.runWithRetries(RetryHelper.java:50)
+	at com.google.cloud.storage.StorageImpl.get(StorageImpl.java:293)
+	at io.cdap.plugin.gcp.gcs.source.GCSSource.prepareRun(GCSSource.java:90)
+	at io.cdap.plugin.gcp.gcs.source.GCSSource.prepareRun(GCSSource.java:61)
+	at io.cdap.cdap.etl.common.plugin.WrappedBatchSource.lambda$prepareRun$0(WrappedBatchSource.java:53)
+	at io.cdap.cdap.etl.common.plugin.Caller$1.call(Caller.java:30)
+	at io.cdap.cdap.etl.common.plugin.StageLoggingCaller.call(StageLoggingCaller.java:40)
+	at io.cdap.cdap.etl.common.plugin.WrappedBatchSource.prepareRun(WrappedBatchSource.java:52)
+	at io.cdap.cdap.etl.common.plugin.WrappedBatchSource.prepareRun(WrappedBatchSource.java:36)
+	at io.cdap.cdap.etl.common.submit.SubmitterPlugin.lambda$prepareRun$2(SubmitterPlugin.java:71)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.lambda$execute$3(AbstractContext.java:527)
+	at io.cdap.cdap.data2.transaction.Transactions$CacheBasedTransactional.finishExecute(Transactions.java:224)
+	at io.cdap.cdap.data2.transaction.Transactions$CacheBasedTransactional.execute(Transactions.java:211)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.execute(AbstractContext.java:524)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.execute(AbstractContext.java:512)
+	at io.cdap.cdap.app.runtime.spark.BasicSparkClientContext.execute(BasicSparkClientContext.java:347)
+	at io.cdap.cdap.etl.common.submit.SubmitterPlugin.prepareRun(SubmitterPlugin.java:69)
+	at io.cdap.cdap.etl.common.submit.PipelinePhasePreparer.prepare(PipelinePhasePreparer.java:148)
+	at io.cdap.cdap.etl.spark.AbstractSparkPreparer.prepare(AbstractSparkPreparer.java:87)
+	at io.cdap.cdap.etl.spark.batch.SparkPreparer.prepare(SparkPreparer.java:94)
+	at io.cdap.cdap.etl.spark.batch.ETLSpark.initialize(ETLSpark.java:126)
+	at io.cdap.cdap.api.spark.AbstractSpark.initialize(AbstractSpark.java:131)
+	at io.cdap.cdap.api.spark.AbstractSpark.initialize(AbstractSpark.java:33)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService$1.initialize(SparkRuntimeService.java:175)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService$1.initialize(SparkRuntimeService.java:170)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.lambda$initializeProgram$6(AbstractContext.java:612)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.execute(AbstractContext.java:572)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.initializeProgram(AbstractContext.java:609)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService.initialize(SparkRuntimeService.java:532)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService.startUp(SparkRuntimeService.java:217)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$1.run(AbstractExecutionThreadService.java:47)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService.lambda$null$2(SparkRuntimeService.java:507)
+	at java.lang.Thread.run(Thread.java:750)
+2023-03-14 04:39:48,052 - DEBUG [SparkRunner-phase-1:i.c.c.c.l.c.UncaughtExceptionHandler@39] - Uncaught exception in thread Thread[SparkRunner-phase-1,5,main]
+java.lang.RuntimeException: org.apache.tephra.TransactionFailureException: Exception raised from TxRunnable.run() io.cdap.cdap.internal.app.runtime.AbstractContext$$Lambda$65/1756762368@11501a3d
+	at com.google.common.base.Throwables.propagate(Throwables.java:160)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$1.run(AbstractExecutionThreadService.java:69)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService.lambda$null$2(SparkRuntimeService.java:507)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: org.apache.tephra.TransactionFailureException: Exception raised from TxRunnable.run() io.cdap.cdap.internal.app.runtime.AbstractContext$$Lambda$65/1756762368@11501a3d
+	at io.cdap.cdap.data2.transaction.Transactions$CacheBasedTransactional.finishExecute(Transactions.java:226)
+	at io.cdap.cdap.data2.transaction.Transactions$CacheBasedTransactional.execute(Transactions.java:211)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.execute(AbstractContext.java:524)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.execute(AbstractContext.java:512)
+	at io.cdap.cdap.app.runtime.spark.BasicSparkClientContext.execute(BasicSparkClientContext.java:347)
+	at io.cdap.cdap.etl.common.submit.SubmitterPlugin.prepareRun(SubmitterPlugin.java:69)
+	at io.cdap.cdap.etl.common.submit.PipelinePhasePreparer.prepare(PipelinePhasePreparer.java:148)
+	at io.cdap.cdap.etl.spark.AbstractSparkPreparer.prepare(AbstractSparkPreparer.java:87)
+	at io.cdap.cdap.etl.spark.batch.SparkPreparer.prepare(SparkPreparer.java:94)
+	at io.cdap.cdap.etl.spark.batch.ETLSpark.initialize(ETLSpark.java:126)
+	at io.cdap.cdap.api.spark.AbstractSpark.initialize(AbstractSpark.java:131)
+	at io.cdap.cdap.api.spark.AbstractSpark.initialize(AbstractSpark.java:33)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService$1.initialize(SparkRuntimeService.java:175)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService$1.initialize(SparkRuntimeService.java:170)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.lambda$initializeProgram$6(AbstractContext.java:612)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.execute(AbstractContext.java:572)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.initializeProgram(AbstractContext.java:609)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService.initialize(SparkRuntimeService.java:532)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService.startUp(SparkRuntimeService.java:217)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$1.run(AbstractExecutionThreadService.java:47)
+	... 2 common frames omitted
+Caused by: java.lang.RuntimeException: Unable to access bucket source-753153349896. Ensure you entered the correct bucket path and have permissions for it.
+	at io.cdap.plugin.gcp.gcs.source.GCSSource.prepareRun(GCSSource.java:93)
+	at io.cdap.plugin.gcp.gcs.source.GCSSource.prepareRun(GCSSource.java:61)
+	at io.cdap.cdap.etl.common.plugin.WrappedBatchSource.lambda$prepareRun$0(WrappedBatchSource.java:53)
+	at io.cdap.cdap.etl.common.plugin.Caller$1.call(Caller.java:30)
+	at io.cdap.cdap.etl.common.plugin.StageLoggingCaller.call(StageLoggingCaller.java:40)
+	at io.cdap.cdap.etl.common.plugin.WrappedBatchSource.prepareRun(WrappedBatchSource.java:52)
+	at io.cdap.cdap.etl.common.plugin.WrappedBatchSource.prepareRun(WrappedBatchSource.java:36)
+	at io.cdap.cdap.etl.common.submit.SubmitterPlugin.lambda$prepareRun$2(SubmitterPlugin.java:71)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.lambda$execute$3(AbstractContext.java:527)
+	at io.cdap.cdap.data2.transaction.Transactions$CacheBasedTransactional.finishExecute(Transactions.java:224)
+	... 21 common frames omitted
+Caused by: com.google.cloud.storage.StorageException: 321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist).
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.translate(HttpStorageRpc.java:233)
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.get(HttpStorageRpc.java:425)
+	at com.google.cloud.storage.StorageImpl$4.call(StorageImpl.java:297)
+	at com.google.cloud.storage.StorageImpl$4.call(StorageImpl.java:294)
+	at com.google.api.gax.retrying.DirectRetryingExecutor.submit(DirectRetryingExecutor.java:105)
+	at com.google.cloud.RetryHelper.run(RetryHelper.java:76)
+	at com.google.cloud.RetryHelper.runWithRetries(RetryHelper.java:50)
+	at com.google.cloud.storage.StorageImpl.get(StorageImpl.java:293)
+	at io.cdap.plugin.gcp.gcs.source.GCSSource.prepareRun(GCSSource.java:90)
+	... 30 common frames omitted
+Caused by: com.google.api.client.googleapis.json.GoogleJsonResponseException: 403 Forbidden
+GET https://storage.googleapis.com/storage/v1/b/source-753153349896?projection=full
+{
+  "code" : 403,
+  "errors" : [ {
+    "domain" : "global",
+    "message" : "321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist).",
+    "reason" : "forbidden"
+  } ],
+  "message" : "321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist)."
+}
+	at com.google.api.client.googleapis.json.GoogleJsonResponseException.from(GoogleJsonResponseException.java:146)
+	at com.google.api.client.googleapis.services.json.AbstractGoogleJsonClientRequest.newExceptionOnError(AbstractGoogleJsonClientRequest.java:118)
+	at com.google.api.client.googleapis.services.json.AbstractGoogleJsonClientRequest.newExceptionOnError(AbstractGoogleJsonClientRequest.java:37)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest$1.interceptResponse(AbstractGoogleClientRequest.java:428)
+	at com.google.api.client.http.HttpRequest.execute(HttpRequest.java:1111)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.executeUnparsed(AbstractGoogleClientRequest.java:514)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.executeUnparsed(AbstractGoogleClientRequest.java:455)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.execute(AbstractGoogleClientRequest.java:565)
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.get(HttpStorageRpc.java:422)
+	... 37 common frames omitted
+2023-03-14 04:39:48,074 - ERROR [WorkflowDriver:i.c.c.d.SmartWorkflow@542] - Pipeline 'Test_BigQuery' failed.
+2023-03-14 04:39:48,279 - ERROR [WorkflowDriver:i.c.c.i.a.r.w.WorkflowProgramController@89] - Workflow service 'workflow.default.Test_BigQuery.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379' failed.
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: org.apache.tephra.TransactionFailureException: Exception raised from TxRunnable.run() io.cdap.cdap.internal.app.runtime.AbstractContext$$Lambda$65/1756762368@11501a3d
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at io.cdap.cdap.internal.app.runtime.workflow.WorkflowDriver.executeAction(WorkflowDriver.java:348)
+	at io.cdap.cdap.internal.app.runtime.workflow.WorkflowDriver.executeNode(WorkflowDriver.java:479)
+	at io.cdap.cdap.internal.app.runtime.workflow.WorkflowDriver.executeAll(WorkflowDriver.java:645)
+	at io.cdap.cdap.internal.app.runtime.workflow.WorkflowDriver.run(WorkflowDriver.java:630)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$1.run(AbstractExecutionThreadService.java:52)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.RuntimeException: org.apache.tephra.TransactionFailureException: Exception raised from TxRunnable.run() io.cdap.cdap.internal.app.runtime.AbstractContext$$Lambda$65/1756762368@11501a3d
+	at com.google.common.base.Throwables.propagate(Throwables.java:160)
+	at io.cdap.cdap.internal.app.runtime.workflow.DefaultProgramWorkflowRunner$1.run(DefaultProgramWorkflowRunner.java:143)
+	at io.cdap.cdap.internal.app.runtime.workflow.WorkflowDriver$1.call(WorkflowDriver.java:342)
+	at io.cdap.cdap.internal.app.runtime.workflow.WorkflowDriver$1.call(WorkflowDriver.java:326)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	... 1 common frames omitted
+Caused by: org.apache.tephra.TransactionFailureException: Exception raised from TxRunnable.run() io.cdap.cdap.internal.app.runtime.AbstractContext$$Lambda$65/1756762368@11501a3d
+	at io.cdap.cdap.data2.transaction.Transactions$CacheBasedTransactional.finishExecute(Transactions.java:226)
+	at io.cdap.cdap.data2.transaction.Transactions$CacheBasedTransactional.execute(Transactions.java:211)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.execute(AbstractContext.java:524)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.execute(AbstractContext.java:512)
+	at io.cdap.cdap.app.runtime.spark.BasicSparkClientContext.execute(BasicSparkClientContext.java:347)
+	at io.cdap.cdap.etl.common.submit.SubmitterPlugin.prepareRun(SubmitterPlugin.java:69)
+	at io.cdap.cdap.etl.common.submit.PipelinePhasePreparer.prepare(PipelinePhasePreparer.java:148)
+	at io.cdap.cdap.etl.spark.AbstractSparkPreparer.prepare(AbstractSparkPreparer.java:87)
+	at io.cdap.cdap.etl.spark.batch.SparkPreparer.prepare(SparkPreparer.java:94)
+	at io.cdap.cdap.etl.spark.batch.ETLSpark.initialize(ETLSpark.java:126)
+	at io.cdap.cdap.api.spark.AbstractSpark.initialize(AbstractSpark.java:131)
+	at io.cdap.cdap.api.spark.AbstractSpark.initialize(AbstractSpark.java:33)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService$1.initialize(SparkRuntimeService.java:175)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService$1.initialize(SparkRuntimeService.java:170)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.lambda$initializeProgram$6(AbstractContext.java:612)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.execute(AbstractContext.java:572)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.initializeProgram(AbstractContext.java:609)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService.initialize(SparkRuntimeService.java:532)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService.startUp(SparkRuntimeService.java:217)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$1.run(AbstractExecutionThreadService.java:47)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService.lambda$null$2(SparkRuntimeService.java:507)
+	... 1 common frames omitted
+Caused by: java.lang.RuntimeException: Unable to access bucket source-753153349896. Ensure you entered the correct bucket path and have permissions for it.
+	at io.cdap.plugin.gcp.gcs.source.GCSSource.prepareRun(GCSSource.java:93)
+	at io.cdap.plugin.gcp.gcs.source.GCSSource.prepareRun(GCSSource.java:61)
+	at io.cdap.cdap.etl.common.plugin.WrappedBatchSource.lambda$prepareRun$0(WrappedBatchSource.java:53)
+	at io.cdap.cdap.etl.common.plugin.Caller$1.call(Caller.java:30)
+	at io.cdap.cdap.etl.common.plugin.StageLoggingCaller.call(StageLoggingCaller.java:40)
+	at io.cdap.cdap.etl.common.plugin.WrappedBatchSource.prepareRun(WrappedBatchSource.java:52)
+	at io.cdap.cdap.etl.common.plugin.WrappedBatchSource.prepareRun(WrappedBatchSource.java:36)
+	at io.cdap.cdap.etl.common.submit.SubmitterPlugin.lambda$prepareRun$2(SubmitterPlugin.java:71)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.lambda$execute$3(AbstractContext.java:527)
+	at io.cdap.cdap.data2.transaction.Transactions$CacheBasedTransactional.finishExecute(Transactions.java:224)
+	... 21 common frames omitted
+Caused by: com.google.cloud.storage.StorageException: 321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist).
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.translate(HttpStorageRpc.java:233)
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.get(HttpStorageRpc.java:425)
+	at com.google.cloud.storage.StorageImpl$4.call(StorageImpl.java:297)
+	at com.google.cloud.storage.StorageImpl$4.call(StorageImpl.java:294)
+	at com.google.api.gax.retrying.DirectRetryingExecutor.submit(DirectRetryingExecutor.java:105)
+	at com.google.cloud.RetryHelper.run(RetryHelper.java:76)
+	at com.google.cloud.RetryHelper.runWithRetries(RetryHelper.java:50)
+	at com.google.cloud.storage.StorageImpl.get(StorageImpl.java:293)
+	at io.cdap.plugin.gcp.gcs.source.GCSSource.prepareRun(GCSSource.java:90)
+	... 30 common frames omitted
+Caused by: com.google.api.client.googleapis.json.GoogleJsonResponseException: 403 Forbidden
+GET https://storage.googleapis.com/storage/v1/b/source-753153349896?projection=full
+{
+  "code" : 403,
+  "errors" : [ {
+    "domain" : "global",
+    "message" : "321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist).",
+    "reason" : "forbidden"
+  } ],
+  "message" : "321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist)."
+}
+	at com.google.api.client.googleapis.json.GoogleJsonResponseException.from(GoogleJsonResponseException.java:146)
+	at com.google.api.client.googleapis.services.json.AbstractGoogleJsonClientRequest.newExceptionOnError(AbstractGoogleJsonClientRequest.java:118)
+	at com.google.api.client.googleapis.services.json.AbstractGoogleJsonClientRequest.newExceptionOnError(AbstractGoogleJsonClientRequest.java:37)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest$1.interceptResponse(AbstractGoogleClientRequest.java:428)
+	at com.google.api.client.http.HttpRequest.execute(HttpRequest.java:1111)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.executeUnparsed(AbstractGoogleClientRequest.java:514)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.executeUnparsed(AbstractGoogleClientRequest.java:455)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.execute(AbstractGoogleClientRequest.java:565)
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.get(HttpStorageRpc.java:422)
+	... 37 common frames omitted
+2023-03-14 04:39:48,285 - ERROR [TwillContainerService:i.c.c.i.a.r.d.AbstractProgramTwillRunnable@275] - Program DataPipelineWorkflow execution failed.
+java.util.concurrent.ExecutionException: java.util.concurrent.ExecutionException: java.lang.RuntimeException: org.apache.tephra.TransactionFailureException: Exception raised from TxRunnable.run() io.cdap.cdap.internal.app.runtime.AbstractContext$$Lambda$65/1756762368@11501a3d
+	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:357)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1908)
+	at io.cdap.cdap.internal.app.runtime.distributed.AbstractProgramTwillRunnable.run(AbstractProgramTwillRunnable.java:271)
+	at org.apache.twill.internal.container.TwillContainerService.doRun(TwillContainerService.java:224)
+	at org.apache.twill.internal.AbstractTwillService.run(AbstractTwillService.java:192)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$1.run(AbstractExecutionThreadService.java:52)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.util.concurrent.ExecutionException: java.lang.RuntimeException: org.apache.tephra.TransactionFailureException: Exception raised from TxRunnable.run() io.cdap.cdap.internal.app.runtime.AbstractContext$$Lambda$65/1756762368@11501a3d
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at io.cdap.cdap.internal.app.runtime.workflow.WorkflowDriver.executeAction(WorkflowDriver.java:348)
+	at io.cdap.cdap.internal.app.runtime.workflow.WorkflowDriver.executeNode(WorkflowDriver.java:479)
+	at io.cdap.cdap.internal.app.runtime.workflow.WorkflowDriver.executeAll(WorkflowDriver.java:645)
+	at io.cdap.cdap.internal.app.runtime.workflow.WorkflowDriver.run(WorkflowDriver.java:630)
+	... 2 common frames omitted
+Caused by: java.lang.RuntimeException: org.apache.tephra.TransactionFailureException: Exception raised from TxRunnable.run() io.cdap.cdap.internal.app.runtime.AbstractContext$$Lambda$65/1756762368@11501a3d
+	at com.google.common.base.Throwables.propagate(Throwables.java:160)
+	at io.cdap.cdap.internal.app.runtime.workflow.DefaultProgramWorkflowRunner$1.run(DefaultProgramWorkflowRunner.java:143)
+	at io.cdap.cdap.internal.app.runtime.workflow.WorkflowDriver$1.call(WorkflowDriver.java:342)
+	at io.cdap.cdap.internal.app.runtime.workflow.WorkflowDriver$1.call(WorkflowDriver.java:326)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	... 1 common frames omitted
+Caused by: org.apache.tephra.TransactionFailureException: Exception raised from TxRunnable.run() io.cdap.cdap.internal.app.runtime.AbstractContext$$Lambda$65/1756762368@11501a3d
+	at io.cdap.cdap.data2.transaction.Transactions$CacheBasedTransactional.finishExecute(Transactions.java:226)
+	at io.cdap.cdap.data2.transaction.Transactions$CacheBasedTransactional.execute(Transactions.java:211)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.execute(AbstractContext.java:524)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.execute(AbstractContext.java:512)
+	at io.cdap.cdap.app.runtime.spark.BasicSparkClientContext.execute(BasicSparkClientContext.java:347)
+	at io.cdap.cdap.etl.common.submit.SubmitterPlugin.prepareRun(SubmitterPlugin.java:69)
+	at io.cdap.cdap.etl.common.submit.PipelinePhasePreparer.prepare(PipelinePhasePreparer.java:148)
+	at io.cdap.cdap.etl.spark.AbstractSparkPreparer.prepare(AbstractSparkPreparer.java:87)
+	at io.cdap.cdap.etl.spark.batch.SparkPreparer.prepare(SparkPreparer.java:94)
+	at io.cdap.cdap.etl.spark.batch.ETLSpark.initialize(ETLSpark.java:126)
+	at io.cdap.cdap.api.spark.AbstractSpark.initialize(AbstractSpark.java:131)
+	at io.cdap.cdap.api.spark.AbstractSpark.initialize(AbstractSpark.java:33)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService$1.initialize(SparkRuntimeService.java:175)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService$1.initialize(SparkRuntimeService.java:170)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.lambda$initializeProgram$6(AbstractContext.java:612)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.execute(AbstractContext.java:572)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.initializeProgram(AbstractContext.java:609)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService.initialize(SparkRuntimeService.java:532)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService.startUp(SparkRuntimeService.java:217)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$1.run(AbstractExecutionThreadService.java:47)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService.lambda$null$2(SparkRuntimeService.java:507)
+	... 1 common frames omitted
+Caused by: java.lang.RuntimeException: Unable to access bucket source-753153349896. Ensure you entered the correct bucket path and have permissions for it.
+	at io.cdap.plugin.gcp.gcs.source.GCSSource.prepareRun(GCSSource.java:93)
+	at io.cdap.plugin.gcp.gcs.source.GCSSource.prepareRun(GCSSource.java:61)
+	at io.cdap.cdap.etl.common.plugin.WrappedBatchSource.lambda$prepareRun$0(WrappedBatchSource.java:53)
+	at io.cdap.cdap.etl.common.plugin.Caller$1.call(Caller.java:30)
+	at io.cdap.cdap.etl.common.plugin.StageLoggingCaller.call(StageLoggingCaller.java:40)
+	at io.cdap.cdap.etl.common.plugin.WrappedBatchSource.prepareRun(WrappedBatchSource.java:52)
+	at io.cdap.cdap.etl.common.plugin.WrappedBatchSource.prepareRun(WrappedBatchSource.java:36)
+	at io.cdap.cdap.etl.common.submit.SubmitterPlugin.lambda$prepareRun$2(SubmitterPlugin.java:71)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.lambda$execute$3(AbstractContext.java:527)
+	at io.cdap.cdap.data2.transaction.Transactions$CacheBasedTransactional.finishExecute(Transactions.java:224)
+	... 21 common frames omitted
+Caused by: com.google.cloud.storage.StorageException: 321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist).
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.translate(HttpStorageRpc.java:233)
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.get(HttpStorageRpc.java:425)
+	at com.google.cloud.storage.StorageImpl$4.call(StorageImpl.java:297)
+	at com.google.cloud.storage.StorageImpl$4.call(StorageImpl.java:294)
+	at com.google.api.gax.retrying.DirectRetryingExecutor.submit(DirectRetryingExecutor.java:105)
+	at com.google.cloud.RetryHelper.run(RetryHelper.java:76)
+	at com.google.cloud.RetryHelper.runWithRetries(RetryHelper.java:50)
+	at com.google.cloud.storage.StorageImpl.get(StorageImpl.java:293)
+	at io.cdap.plugin.gcp.gcs.source.GCSSource.prepareRun(GCSSource.java:90)
+	... 30 common frames omitted
+Caused by: com.google.api.client.googleapis.json.GoogleJsonResponseException: 403 Forbidden
+GET https://storage.googleapis.com/storage/v1/b/source-753153349896?projection=full
+{
+  "code" : 403,
+  "errors" : [ {
+    "domain" : "global",
+    "message" : "321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist).",
+    "reason" : "forbidden"
+  } ],
+  "message" : "321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist)."
+}
+	at com.google.api.client.googleapis.json.GoogleJsonResponseException.from(GoogleJsonResponseException.java:146)
+	at com.google.api.client.googleapis.services.json.AbstractGoogleJsonClientRequest.newExceptionOnError(AbstractGoogleJsonClientRequest.java:118)
+	at com.google.api.client.googleapis.services.json.AbstractGoogleJsonClientRequest.newExceptionOnError(AbstractGoogleJsonClientRequest.java:37)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest$1.interceptResponse(AbstractGoogleClientRequest.java:428)
+	at com.google.api.client.http.HttpRequest.execute(HttpRequest.java:1111)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.executeUnparsed(AbstractGoogleClientRequest.java:514)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.executeUnparsed(AbstractGoogleClientRequest.java:455)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.execute(AbstractGoogleClientRequest.java:565)
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.get(HttpStorageRpc.java:422)
+	... 37 common frames omitted
+2023-03-14 04:39:48,286 - DEBUG [WorkflowDriver:i.c.c.c.l.c.UncaughtExceptionHandler@39] - Uncaught exception in thread Thread[WorkflowDriver,5,main]
+java.lang.RuntimeException: java.util.concurrent.ExecutionException: java.lang.RuntimeException: org.apache.tephra.TransactionFailureException: Exception raised from TxRunnable.run() io.cdap.cdap.internal.app.runtime.AbstractContext$$Lambda$65/1756762368@11501a3d
+	at com.google.common.base.Throwables.propagate(Throwables.java:160)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$1.run(AbstractExecutionThreadService.java:69)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.util.concurrent.ExecutionException: java.lang.RuntimeException: org.apache.tephra.TransactionFailureException: Exception raised from TxRunnable.run() io.cdap.cdap.internal.app.runtime.AbstractContext$$Lambda$65/1756762368@11501a3d
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at io.cdap.cdap.internal.app.runtime.workflow.WorkflowDriver.executeAction(WorkflowDriver.java:348)
+	at io.cdap.cdap.internal.app.runtime.workflow.WorkflowDriver.executeNode(WorkflowDriver.java:479)
+	at io.cdap.cdap.internal.app.runtime.workflow.WorkflowDriver.executeAll(WorkflowDriver.java:645)
+	at io.cdap.cdap.internal.app.runtime.workflow.WorkflowDriver.run(WorkflowDriver.java:630)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$1.run(AbstractExecutionThreadService.java:52)
+	... 1 common frames omitted
+Caused by: java.lang.RuntimeException: org.apache.tephra.TransactionFailureException: Exception raised from TxRunnable.run() io.cdap.cdap.internal.app.runtime.AbstractContext$$Lambda$65/1756762368@11501a3d
+	at com.google.common.base.Throwables.propagate(Throwables.java:160)
+	at io.cdap.cdap.internal.app.runtime.workflow.DefaultProgramWorkflowRunner$1.run(DefaultProgramWorkflowRunner.java:143)
+	at io.cdap.cdap.internal.app.runtime.workflow.WorkflowDriver$1.call(WorkflowDriver.java:342)
+	at io.cdap.cdap.internal.app.runtime.workflow.WorkflowDriver$1.call(WorkflowDriver.java:326)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	... 1 common frames omitted
+Caused by: org.apache.tephra.TransactionFailureException: Exception raised from TxRunnable.run() io.cdap.cdap.internal.app.runtime.AbstractContext$$Lambda$65/1756762368@11501a3d
+	at io.cdap.cdap.data2.transaction.Transactions$CacheBasedTransactional.finishExecute(Transactions.java:226)
+	at io.cdap.cdap.data2.transaction.Transactions$CacheBasedTransactional.execute(Transactions.java:211)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.execute(AbstractContext.java:524)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.execute(AbstractContext.java:512)
+	at io.cdap.cdap.app.runtime.spark.BasicSparkClientContext.execute(BasicSparkClientContext.java:347)
+	at io.cdap.cdap.etl.common.submit.SubmitterPlugin.prepareRun(SubmitterPlugin.java:69)
+	at io.cdap.cdap.etl.common.submit.PipelinePhasePreparer.prepare(PipelinePhasePreparer.java:148)
+	at io.cdap.cdap.etl.spark.AbstractSparkPreparer.prepare(AbstractSparkPreparer.java:87)
+	at io.cdap.cdap.etl.spark.batch.SparkPreparer.prepare(SparkPreparer.java:94)
+	at io.cdap.cdap.etl.spark.batch.ETLSpark.initialize(ETLSpark.java:126)
+	at io.cdap.cdap.api.spark.AbstractSpark.initialize(AbstractSpark.java:131)
+	at io.cdap.cdap.api.spark.AbstractSpark.initialize(AbstractSpark.java:33)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService$1.initialize(SparkRuntimeService.java:175)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService$1.initialize(SparkRuntimeService.java:170)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.lambda$initializeProgram$6(AbstractContext.java:612)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.execute(AbstractContext.java:572)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.initializeProgram(AbstractContext.java:609)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService.initialize(SparkRuntimeService.java:532)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService.startUp(SparkRuntimeService.java:217)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$1.run(AbstractExecutionThreadService.java:47)
+	at io.cdap.cdap.app.runtime.spark.SparkRuntimeService.lambda$null$2(SparkRuntimeService.java:507)
+	... 1 common frames omitted
+Caused by: java.lang.RuntimeException: Unable to access bucket source-753153349896. Ensure you entered the correct bucket path and have permissions for it.
+	at io.cdap.plugin.gcp.gcs.source.GCSSource.prepareRun(GCSSource.java:93)
+	at io.cdap.plugin.gcp.gcs.source.GCSSource.prepareRun(GCSSource.java:61)
+	at io.cdap.cdap.etl.common.plugin.WrappedBatchSource.lambda$prepareRun$0(WrappedBatchSource.java:53)
+	at io.cdap.cdap.etl.common.plugin.Caller$1.call(Caller.java:30)
+	at io.cdap.cdap.etl.common.plugin.StageLoggingCaller.call(StageLoggingCaller.java:40)
+	at io.cdap.cdap.etl.common.plugin.WrappedBatchSource.prepareRun(WrappedBatchSource.java:52)
+	at io.cdap.cdap.etl.common.plugin.WrappedBatchSource.prepareRun(WrappedBatchSource.java:36)
+	at io.cdap.cdap.etl.common.submit.SubmitterPlugin.lambda$prepareRun$2(SubmitterPlugin.java:71)
+	at io.cdap.cdap.internal.app.runtime.AbstractContext.lambda$execute$3(AbstractContext.java:527)
+	at io.cdap.cdap.data2.transaction.Transactions$CacheBasedTransactional.finishExecute(Transactions.java:224)
+	... 21 common frames omitted
+Caused by: com.google.cloud.storage.StorageException: 321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist).
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.translate(HttpStorageRpc.java:233)
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.get(HttpStorageRpc.java:425)
+	at com.google.cloud.storage.StorageImpl$4.call(StorageImpl.java:297)
+	at com.google.cloud.storage.StorageImpl$4.call(StorageImpl.java:294)
+	at com.google.api.gax.retrying.DirectRetryingExecutor.submit(DirectRetryingExecutor.java:105)
+	at com.google.cloud.RetryHelper.run(RetryHelper.java:76)
+	at com.google.cloud.RetryHelper.runWithRetries(RetryHelper.java:50)
+	at com.google.cloud.storage.StorageImpl.get(StorageImpl.java:293)
+	at io.cdap.plugin.gcp.gcs.source.GCSSource.prepareRun(GCSSource.java:90)
+	... 30 common frames omitted
+Caused by: com.google.api.client.googleapis.json.GoogleJsonResponseException: 403 Forbidden
+GET https://storage.googleapis.com/storage/v1/b/source-753153349896?projection=full
+{
+  "code" : 403,
+  "errors" : [ {
+    "domain" : "global",
+    "message" : "321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist).",
+    "reason" : "forbidden"
+  } ],
+  "message" : "321304222053-compute@developer.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist)."
+}
+	at com.google.api.client.googleapis.json.GoogleJsonResponseException.from(GoogleJsonResponseException.java:146)
+	at com.google.api.client.googleapis.services.json.AbstractGoogleJsonClientRequest.newExceptionOnError(AbstractGoogleJsonClientRequest.java:118)
+	at com.google.api.client.googleapis.services.json.AbstractGoogleJsonClientRequest.newExceptionOnError(AbstractGoogleJsonClientRequest.java:37)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest$1.interceptResponse(AbstractGoogleClientRequest.java:428)
+	at com.google.api.client.http.HttpRequest.execute(HttpRequest.java:1111)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.executeUnparsed(AbstractGoogleClientRequest.java:514)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.executeUnparsed(AbstractGoogleClientRequest.java:455)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.execute(AbstractGoogleClientRequest.java:565)
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.get(HttpStorageRpc.java:422)
+	... 37 common frames omitted
+2023-03-14 04:39:48,286 - INFO  [TwillContainerService:i.c.c.i.a.r.d.AbstractProgramTwillRunnable@278] - Program run program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379 completed. Releasing resources.
+2023-03-14 04:39:48,296 - DEBUG [TwillContainerService:i.c.c.l.a.LogAppenderInitializer@137] - Stopping log appender TMSLogAppender
+2023-03-14 04:39:48,939 - INFO  [ApplicationMasterService:o.a.t.i.a.ApplicationMasterService@590] - Container container_1678768605365_0001_01_000002 completed with COMPLETE:[2023-03-14 04:39:48.786]Exception from container-launch.
+Container id: container_1678768605365_0001_01_000002
+Exit code: 1
+
+[2023-03-14 04:39:48.824]Container exited with a non-zero exit code 1. Error file: prelaunch.err.
+Last 4096 bytes of prelaunch.err :
+Last 4096 bytes of stderr :
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/hadoop/yarn/nm-local-dir/usercache/root/appcache/application_1678768605365_0001/container_1678768605365_0001_01_000002/application.jar/lib/ch.qos.logback.logback-classic-1.2.11.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/hadoop/yarn/nm-local-dir/usercache/root/appcache/application_1678768605365_0001/container_1678768605365_0001_01_000002/twill.jar/lib/ch.qos.logback.logback-classic-1.2.11.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/hadoop/lib/slf4j-reload4j-1.7.35.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/hadoop/yarn/nm-local-dir/usercache/root/appcache/application_1678768605365_0001/container_1678768605365_0001_01_000002/application.jar/lib/ch.qos.logback.logback-classic-1.2.11.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/hadoop/yarn/nm-local-dir/usercache/root/appcache/application_1678768605365_0001/container_1678768605365_0001_01_000002/twill.jar/lib/ch.qos.logback.logback-classic-1.2.11.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/hadoop/lib/slf4j-reload4j-1.7.35.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+
+
+[2023-03-14 04:39:48.828]Container exited with a non-zero exit code 1. Error file: prelaunch.err.
+Last 4096 bytes of prelaunch.err :
+Last 4096 bytes of stderr :
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/hadoop/yarn/nm-local-dir/usercache/root/appcache/application_1678768605365_0001/container_1678768605365_0001_01_000002/application.jar/lib/ch.qos.logback.logback-classic-1.2.11.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/hadoop/yarn/nm-local-dir/usercache/root/appcache/application_1678768605365_0001/container_1678768605365_0001_01_000002/twill.jar/lib/ch.qos.logback.logback-classic-1.2.11.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/hadoop/lib/slf4j-reload4j-1.7.35.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/hadoop/yarn/nm-local-dir/usercache/root/appcache/application_1678768605365_0001/container_1678768605365_0001_01_000002/application.jar/lib/ch.qos.logback.logback-classic-1.2.11.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/hadoop/yarn/nm-local-dir/usercache/root/appcache/application_1678768605365_0001/container_1678768605365_0001_01_000002/twill.jar/lib/ch.qos.logback.logback-classic-1.2.11.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/hadoop/lib/slf4j-reload4j-1.7.35.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+
+
+.
+2023-03-14 04:39:48,949 - WARN  [ApplicationMasterService:o.a.t.i.a.RunningContainers@509] - Container container_1678768605365_0001_01_000002 exited abnormally with state COMPLETE, exit code 1.
+2023-03-14 04:39:48,950 - INFO  [ApplicationMasterService:o.a.t.i.a.RunningContainers@542] - Retries exhausted for instance 0 of runnable DataPipelineWorkflow.
+2023-03-14 04:39:48,952 - INFO  [ApplicationMasterService:o.a.t.i.a.ApplicationMasterService@503] - All containers completed. Shutting down application master.
+2023-03-14 04:39:48,962 - INFO  [ApplicationMasterService:o.a.t.i.a.ApplicationMasterService@337] - Stop application master with spec: {"fsUser":"root","twillAppDir":"hdfs://cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m:8020/workflow.default.Test_BigQuery.DataPipelineWorkflow/6862e742-f53c-46fb-baed-fc847b6b752c","zkConnectStr":"cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m:38875","twillRunId":"6862e742-f53c-46fb-baed-fc847b6b752c","twillAppName":"workflow.default.Test_BigQuery.DataPipelineWorkflow","rmSchedulerAddr":"cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m:8030","twillSpecification":{"name":"workflow.default.Test_BigQuery.DataPipelineWorkflow","runnables":{"DataPipelineWorkflow":{"name":"DataPipelineWorkflow","runnable":{"classname":"io.cdap.cdap.internal.app.runtime.distributed.WorkflowTwillRunnable","name":"DataPipelineWorkflow","arguments":{}},"resources":{"cores":1,"memorySize":1024,"instances":1,"uplink":-1,"downlink":-1},"files":[{"name":"appSpec.json","uri":"hdfs://cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m:8020/workflow.default.Test_BigQuery.DataPipelineWorkflow/6862e742-f53c-46fb-baed-fc847b6b752c/appSpec.json.fa16e453-e18a-41fa-9e34-c0fc845769ef.json","lastModified":1678768726779,"size":101897,"archive":false,"pattern":null},{"name":"artifacts_archive.jar","uri":"hdfs://cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m:8020/workflow.default.Test_BigQuery.DataPipelineWorkflow/6862e742-f53c-46fb-baed-fc847b6b752c/artifacts_archive.jar.c538f054-06f1-4214-b0b4-cfbfca355196.jar","lastModified":1678768728061,"size":289737374,"archive":false,"pattern":null},{"name":"spark-defaults.conf","uri":"hdfs://cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m:8020/workflow.default.Test_BigQuery.DataPipelineWorkflow/6862e742-f53c-46fb-baed-fc847b6b752c/spark-defaults.conf.eae60edf-b0eb-4290-a43f-6828010f24ac.tmp","lastModified":1678768728091,"size":1987,"archive":false,"pattern":null},{"name":"artifacts","uri":"hdfs://cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m:8020/workflow.default.Test_BigQuery.DataPipelineWorkflow/6862e742-f53c-46fb-baed-fc847b6b752c/artifacts.88455335-6163-4b2b-bca7-bdc2c1eeee0b.jar","lastModified":1678768729262,"size":289737374,"archive":true,"pattern":null},{"name":"program.options.json","uri":"hdfs://cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m:8020/workflow.default.Test_BigQuery.DataPipelineWorkflow/6862e742-f53c-46fb-baed-fc847b6b752c/program.options.json.ea235fa3-074c-4cbf-85cb-02a3c46b8c90.json","lastModified":1678768726847,"size":3071,"archive":false,"pattern":null},{"name":"program_366688bda18303296fc427af534a192eb32fd810718b7d9d11c6eab7ef1ca947_1678579200000.jar","uri":"hdfs://cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m:8020/workflow.default.Test_BigQuery.DataPipelineWorkflow/6862e742-f53c-46fb-baed-fc847b6b752c/program_366688bda18303296fc427af534a192eb32fd810718b7d9d11c6eab7ef1ca947_1678579200000.jar.5bda4483-7e33-464e-8ef5-22600248948f.jar","lastModified":1678768728166,"size":10341463,"archive":false,"pattern":null},{"name":"py4j-0.10.9-src.zip","uri":"hdfs://cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m:8020/workflow.default.Test_BigQuery.DataPipelineWorkflow/6862e742-f53c-46fb-baed-fc847b6b752c/py4j-0.10.9-src.zip.c90d6abe-a6e3-405b-91ff-dee8c4bd9099.zip","lastModified":1678768728197,"size":41587,"archive":false,"pattern":null},{"name":"spark.archive-spark3_2.12-3.2.3.zip","uri":"hdfs://cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m/framework/spark/spark.archive-spark3_2.12-3.2.3.zip","lastModified":1678768718156,"size":464833989,"archive":true,"pattern":null},{"name":"hConf.xml","uri":"hdfs://cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m:8020/workflow.default.Test_BigQuery.DataPipelineWorkflow/6862e742-f53c-46fb-baed-fc847b6b752c/hConf.xml.585052e1-1592-4113-89dd-e4dfce9ae330.xml","lastModified":1678768726811,"size":215274,"archive":false,"pattern":null},{"name":"logback.xml","uri":"hdfs://cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m:8020/workflow.default.Test_BigQuery.DataPipelineWorkflow/6862e742-f53c-46fb-baed-fc847b6b752c/logback.xml.0715049a-c08c-45e4-a29a-99e7c531e004.xml","lastModified":1678768726705,"size":4013,"archive":false,"pattern":null},{"name":"__spark_conf__","uri":"hdfs://cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m:8020/workflow.default.Test_BigQuery.DataPipelineWorkflow/6862e742-f53c-46fb-baed-fc847b6b752c/__spark_conf__.cc6aa1ed-843f-44c4-bdfc-555992289a74.zip","lastModified":1678768726735,"size":32958,"archive":true,"pattern":null},{"name":"cConf.xml","uri":"hdfs://cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m:8020/workflow.default.Test_BigQuery.DataPipelineWorkflow/6862e742-f53c-46fb-baed-fc847b6b752c/cConf.xml.ccd094c9-e27b-43ab-8883-bd819d18dc42.xml","lastModified":1678768726887,"size":145272,"archive":false,"pattern":null},{"name":"pyspark.zip","uri":"hdfs://cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m:8020/workflow.default.Test_BigQuery.DataPipelineWorkflow/6862e742-f53c-46fb-baed-fc847b6b752c/pyspark.zip.2066c8ba-aa10-43d4-bde9-0a58dcb7bdb7.zip","lastModified":1678768726659,"size":887352,"archive":false,"pattern":null}]}},"orders":[{"names":["DataPipelineWorkflow"],"type":"STARTED"}],"placementPolicies":[],"handler":{"classname":"io.cdap.cdap.common.twill.TwillAppLifecycleEventHandler","configs":{"abortIfNotFull":"false","abortTime":"120000"}}},"logLevels":{"DataPipelineWorkflow":{}},"maxRetries":{"DataPipelineWorkflow":0},"config":{"twill.yarn.max.app.attempts":"1","twill.log.collection.enabled":"false"},"runnableConfigs":{"DataPipelineWorkflow":{}}}
+2023-03-14 04:39:48,974 - INFO  [ApplicationMasterService:o.a.t.i.a.RunningContainers@393] - Stopping all instances of DataPipelineWorkflow
+2023-03-14 04:39:48,975 - INFO  [ApplicationMasterService:o.a.t.i.a.RunningContainers@417] - Terminated all instances of DataPipelineWorkflow
+2023-03-14 04:39:48,991 - INFO  [ApplicationMasterService:o.a.t.i.a.ApplicationMasterService@461] - Application directory deleted: hdfs://cdap-testbigqu-9efaa893-c221-11ed-ae71-2a6229ece379-m:8020/workflow.default.Test_BigQuery.DataPipelineWorkflow/6862e742-f53c-46fb-baed-fc847b6b752c
+2023-03-14 04:39:49,019 - DEBUG [ApplicationMasterService:i.c.c.l.a.LogAppenderInitializer@137] - Stopping log appender TMSLogAppender
+2023-03-14 04:39:50,182 - DEBUG [main:i.c.c.l.a.LogAppenderInitializer@137] - Stopping log appender TMSLogAppender
+2023-03-14 04:39:50,795 - DEBUG [provisioning-task-9:i.c.c.i.p.t.ProvisioningTask@126] - Executing DEPROVISION subtask REQUESTING_DELETE for program run program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379.
+2023-03-14 04:39:50,949 - DEBUG [provisioning-task-9:i.c.c.i.p.t.ProvisioningTask@130] - Completed DEPROVISION subtask REQUESTING_DELETE for program run program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379.
+2023-03-14 04:39:50,968 - WARN  [provisioning-task-9:i.c.c.r.s.p.d.DataprocProvisioner@457] - Received a request to get the polling strategy for unexpected cluster status RUNNING
+2023-03-14 04:40:16,304 - DEBUG [runtime-scheduler-13:i.c.c.i.a.r.d.r.RemoteExecutionService@88] - Program program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379 is not running
+2023-03-14 04:40:23,814 - DEBUG [provisioning-task-9:i.c.c.i.p.t.ProvisioningTask@126] - Executing DEPROVISION subtask POLLING_DELETE for program run program_run:default.Test_BigQuery.-SNAPSHOT.workflow.DataPipelineWorkflow.9efaa893-c221-11ed-ae71-2a6229ece379.
