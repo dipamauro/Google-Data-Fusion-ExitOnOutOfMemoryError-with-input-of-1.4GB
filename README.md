@@ -29,11 +29,19 @@ rm OriginalOrderFile_costruito.xml;k=1;cat Header_OriginalOrderFile.xml >> Origi
 
 Increasing the value of $k parameter you can get bigger xml files, as following:
 
-k=10 generates a 141 KB file
-k=100 generates a 1.4 MB file
-k=1000 generates a 14.1 MB file
-k=10000 generates a 141 MB file
-k=100000 generates a 1.4 GB file I launched this script directly on the shell of the Google Cloud Platform console. Than, I copied the file to the Google Cloud Storage using the following command:
+k=10 generates a 141 KB file  **[flie 141KB](https://github.com/dipamauro/Google-Data-Fusion-ExitOnOutOfMemoryError-with-input-of-1.4GB/blob/main/OriginalOrderFile_costruito-141KB.xml)**
+
+k=100 generates a 1.4 MB file  **[flie 1.41MB](https://github.com/dipamauro/Google-Data-Fusion-ExitOnOutOfMemoryError-with-input-of-1.4GB/blob/main/OriginalOrderFile_costruito-1.41MB.xml)**
+
+k=1000 generates a 14.1 MB file  **[flie 14.1MB](https://github.com/dipamauro/Google-Data-Fusion-ExitOnOutOfMemoryError-with-input-of-1.4GB/blob/main/OriginalOrderFile_costruito-14.1MB.xml)**
+
+k=10000 generates a 141 MB file **[flie 141MB](https://github.com/dipamauro/Google-Data-Fusion-ExitOnOutOfMemoryError-with-input-of-1.4GB/blob/main/OriginalOrderFile_costruito-141MB.zip)**
+
+k=100000 generates a 1.4 GB file 
+
+k=1000000 generates a 14 GB file 
+
+I launched this script directly on the shell of the Google Cloud Platform console. Than, I copied the file to the Google Cloud Storage using the following command:
 
 gsutil cp OriginalOrderFile_costruito.xml gs://<your bucket>/OriginalOrderFile_costruito.xml
 
