@@ -6,29 +6,27 @@ There are plenty of library in almost every language that do it in one single co
 
 Here is the logic:
 
-I built an xml file
-I created a bucket on Google Cloud Storage for both the input and output files
-I designed the pipeline on Data Fusion, than deployed and run it
-I checked the output stored on Google cloud Storage
-I repeated the 4 steps of above with different xml files: the first one was a small file of only 14 Kbytes, to test the pipeline. Than I replicated the same content of the xml file in order to generate bigger files. I tested the pipeline with different file sizes, and it worked up to 141 MBytes, but when I tried with a file of 1.4 GBytes the Datafusion pipeline generated an error.
+- I built an xml file
+- I created a bucket on Google Cloud Storage for both the input and output files
+- I designed the pipeline on Data Fusion, than deployed and run it
+- I checked the output stored on Google cloud Storage
+- I repeated the 4 steps of above with different xml files: the first one was a small file of only 14 Kbytes, to test the pipeline. Than I replicated the same content of the xml file in order to generate bigger files. I tested the pipeline with different file sizes, and it worked up to 141 MBytes, but when I tried with a file of 1.4 GBytes the Datafusion pipeline generated an error.
+
 Following the files used for the tests:
 
-OriginalOrderFile.xml: https://drive.google.com/file/d/1OYJw700VxMSZJnF-PVP580NY98lt6ouL/view?usp=share_link
+1. OriginalOrderFile.xml: **[OriginalOrderFile.xml](https://github.com/dipamauro/Google-Data-Fusion-ExitOnOutOfMemoryError-with-input-of-1.4GB/blob/main/OriginalOrderFile.xml)**
 
-Header_OriginalOrderFile.xml:
+2. Header_OriginalOrderFile.xml: **[Header_OriginalOrderFile.xml](https://github.com/dipamauro/Google-Data-Fusion-ExitOnOutOfMemoryError-with-input-of-1.4GB#:~:text=now-,Header_OriginalOrderFile.xml,-Add%20files%20via)**
+    
+3. Body_OriginalOrderFile.xml: **[Body_OriginalOrderFile.xml](https://github.com/dipamauro/Google-Data-Fusion-ExitOnOutOfMemoryError-with-input-of-1.4GB/blob/main/Body_OriginalOrderFile.xml)**
 
-<?xml version="1.0" encoding="utf-8"?>  
-<Root xmlns="http://www.adventure-works.com">  
-  <Orders>
-Body_OriginalOrderFile.xml: https://drive.google.com/file/d/1KfOL7_RfWOsB5Pgu8zsHPHJkGiBMhcAa/view?usp=share_link
+4. Footer_OriginalOrderFile.xml: **[Footer_OriginalOrderFile.xml](https://github.com/dipamauro/Google-Data-Fusion-ExitOnOutOfMemoryError-with-input-of-1.4GB/blob/main/Footer_OriginalOrderFile.xml)**
 
-Footer_OriginalOrderFile.xml:
+Starting from the *Header, Body and Footer,* I was able to build a bigger xml file by replicating the body and attaching the header and the footer at the end of the process. The script used for generating the bigger files is the following:
 
-  </Orders>  
-</Root>
-Starting from the Header, Body and Footer, I was able to build a bigger xml file by replicating the body and attaching the header and the footer at the end of the process. The script used for generating the bigger files is the following:
 
 rm OriginalOrderFile_costruito.xml;k=1;cat Header_OriginalOrderFile.xml >> OriginalOrderFile_costruito.xml; while [ $k -le 10 ]; do cat Body_OriginalOrderFile.xml >> OriginalOrderFile_costruito.xml; k=$(( $k + 1 )); done ; cat Footer_OriginalOrderFile.xml >> OriginalOrderFile_costruito.xml
+
 Increasing the value of $k parameter you can get bigger xml files, as following:
 
 k=10 generates a 141 KB file
@@ -36,11 +34,13 @@ k=100 generates a 1.4 MB file
 k=1000 generates a 14.1 MB file
 k=10000 generates a 141 MB file
 k=100000 generates a 1.4 GB file I launched this script directly on the shell of the Google Cloud Platform console. Than, I copied the file to the Google Cloud Storage using the following command:
+
 gsutil cp OriginalOrderFile_costruito.xml gs://<your bucket>/OriginalOrderFile_costruito.xml
+
 Finally I created the pipeline on Google Cloud Data Fusion. Using the console: Data Fusion => Create an Instances => Instance name: "xml-to-json" => Edition: Basic => Create
 
-In the meanwhile, download the pipeline configuration file from here: https://drive.google.com/file/d/1j329sOzbyBbX6c65vna-V5Sx_E9518zN/view?usp=share_link
-
+In the meanwhile, download the pipeline configuration file from here: **[pipeline](https://github.com/dipamauro/Google-Data-Fusion-ExitOnOutOfMemoryError-with-input-of-1.4GB/blob/main/xml-to-json-cdap-data-pipeline.json)**
+ 
 Once the instance is created (it can take about 10 minutes), set the autoscaling feature of the Data Fusion: click on "System Admin" => "Configuration" => "System Compute Profiles" => chose "Autoscaling Dataproc", up to 84 cores
 
 Now, you can upload the pipeline file in the GCP console: Data Fusion => Instances => click on view instance => menu => list => click on the button with the plus symbol on the green background which is on the top right of the screen => click in import in the pipeline block => chose the downloaded pipeline configuration file. If it give a versioning error, click on the "Fix All" button on the bottom right of the screen.
@@ -51,8 +51,8 @@ When you run using the xml files up to 141 MB, the pipeline succeed in only 8 mi
 
 When you run it using the 1.4 GB xml file, the Data Fusion gives an error.
 
-Here is the detailed log downloaded by the Data Fusion console, clicking on the "Download All => View Raw logs" button: https://drive.google.com/file/d/1Jhrv9xkBXZBb_1VI3iGavNGlOHc6TDNo/view?usp=share_link
+Here is the detailed log downloaded by the Data Fusion console, clicking on the "Download All => View Raw logs" button: **[Log file](https://github.com/dipamauro/Google-Data-Fusion-ExitOnOutOfMemoryError-with-input-of-1.4GB/blob/main/downloadLogs%20file%201.4GB-Autoscaling_new.txt)**
 
 Hence, the autoscaling feature of Data Flow is not really working or is not enough performing for a transformation of a file of 1.4 GB!!!
 
-Can anybody help me? How can I run the Data Fusion pipeline for bigger file, let's say 140 GB file?
+**Can anybody help me? How can I run the Data Fusion pipeline for bigger file, let's say 140 GB file?**
