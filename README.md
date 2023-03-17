@@ -10,7 +10,8 @@ Here is the logic:
 - I created a bucket on Google Cloud Storage for both the input and output files
 - I designed the pipeline on Data Fusion, than deployed and run it
 - I checked the output stored on Google cloud Storage
-- I repeated the 4 steps of above with different xml files: the first one was a small file of only 14 Kbytes, to test the pipeline. Than I replicated the same content of the xml file in order to generate bigger files. I tested the pipeline with different file sizes, and it worked up to 141 MBytes, but when I tried with a file of 1.4 GBytes the Datafusion pipeline generated an error.
+I repeated the 4 steps of above with different xml files: the first one was a small file of only 14 Kbytes, to test the pipeline. 
+Than I replicated the same content of the xml file in order to generate bigger files. I tested the pipeline with different file sizes, and it worked up to 141 MBytes, but when I tried with a file of 1.4 GBytes the Datafusion pipeline generated an error.
 
 Following the files used for the tests:
 
@@ -37,7 +38,7 @@ k=1000 generates a 14.1 MB file  **[flie 14.1MB](https://github.com/dipamauro/Go
 
 k=10000 generates a 141 MB file **[flie 141MB](https://github.com/dipamauro/Google-Data-Fusion-ExitOnOutOfMemoryError-with-input-of-1.4GB/blob/main/OriginalOrderFile_costruito-141MB.zip)**
 
-k=100000 generates a 1.4 GB file 
+k=100000 generates a 1.4 GB file **[flie 1.4GB](https://github.com/dipamauro/Google-Data-Fusion-ExitOnOutOfMemoryError-with-input-of-1.4GB/blob/main/OriginalOrderFile_costruito-1.4GB.zip)**
 
 k=1000000 generates a 14 GB file 
 
