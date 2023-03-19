@@ -48,7 +48,7 @@ gsutil cp OriginalOrderFile_costruito.xml gs://<your bucket>/OriginalOrderFile_c
 
 Finally I created the pipeline on Google Cloud Data Fusion. Using the console: Data Fusion => Create an Instances => Instance name: "xml-to-json" => Edition: Basic => Create
 
-In the meanwhile, download the pipeline configuration file from here: **[pipeline](https://github.com/dipamauro/Google-Data-Fusion-ExitOnOutOfMemoryError-with-input-of-1.4GB/blob/main/xml-to-json-cdap-data-pipeline.json)**
+In the meanwhile, download the pipeline configuration file from here: **[pipeline](https://github.com/dipamauro/Google-Data-Fusion-ExitOnOutOfMemoryError-with-input-of-1.4GB/blob/main/xml-to-json-cdap-data-pipeline.json](https://github.com/dipamauro/Google-Data-Fusion-ExitOnOutOfMemoryError-with-input-of-1.4GB/blob/main/xml-to-json-1GB-cdap-data-pipeline.json)**
  
 Once the instance is created (it can take about 10 minutes), set the autoscaling feature of the Data Fusion: click on "System Admin" => "Configuration" => "System Compute Profiles" => chose "Autoscaling Dataproc", up to 84 cores
 
