@@ -21,11 +21,11 @@
                     },
                     "properties": {
                         "format": "blob",
-                        "path": "gs://datafusionsource/OriginalOrderFile_costruito-141MB.xml",
+                        "path": "gs://datafusionsource/OriginalOrderFile_costruito-1.4GB.xml",
                         "connection": "${conn(Cloud Storage Default)}",
                         "fileEncoding": "UTF-8",
                         "useConnection": "true",
-                        "referenceName": "datafusionsource.OriginalOrderFile_costruito-141MB.xml",
+                        "referenceName": "datafusionsource.OriginalOrderFile_costruito-1.4GB.xml",
                         "schema": "{\"type\":\"record\",\"name\":\"blob\",\"fields\":[{\"name\":\"body\",\"type\":\"bytes\"}]}",
                         "sampleSize": "1000",
                         "filenameOnly": "false",
@@ -97,7 +97,7 @@
                     },
                     "properties": {
                         "useConnection": "true",
-                        "referenceName": "output-141MB-",
+                        "referenceName": "output-1.4GB-",
                         "path": "gs://datafusionsource/",
                         "suffix": "yyyy-MM-dd-HH-mm",
                         "format": "json",
