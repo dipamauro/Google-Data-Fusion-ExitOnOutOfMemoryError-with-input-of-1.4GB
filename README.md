@@ -60,7 +60,7 @@ When you run using the xml files up to 141 MB, the pipeline succeed in only 8 mi
 
 When you run it using the 1.4 GB xml file, the Data Fusion gives an error.
 
-Here is the detailed log downloaded by the Data Fusion console, clicking on the "Download All => View Raw logs" button: **[Log file](https://github.com/dipamauro/Google-Data-Fusion-ExitOnOutOfMemoryError-with-input-of-1.4GB/blob/main/downloadLogs%20file%201.4GB-Autoscaling_new.txt)**
+Here is the detailed log downloaded by the Data Fusion console, clicking on the "Download All => View Raw logs" button: **[Log file](https://github.com/dipamauro/Google-Data-Fusion-ExitOnOutOfMemoryError-with-input-of-1.4GB/blob/main/raw-autoscaling%2020230318_23.40%20-1.4%20GB%20-%20FAIL.log)**
 
 Hence, the autoscaling feature of Data Flow is not really working or is not enough performing for a transformation of a file of 1.4 GB!!!
 
