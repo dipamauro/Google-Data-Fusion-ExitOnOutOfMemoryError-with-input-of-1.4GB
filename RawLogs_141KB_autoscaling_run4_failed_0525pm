@@ -1,0 +1,79 @@
+2023-03-19 23:18:58,722 - DEBUG [provisioning-task-0:i.c.c.r.s.p.d.DataprocProvisioner@250] - Not checking cluster reuse, enabled: true, skip delete: false, idle ttl: 240, reuse threshold: 15
+2023-03-19 23:18:58,767 - INFO  [provisioning-task-0:i.c.c.r.s.p.d.DataprocProvisioner@203] - Creating Dataproc cluster cdap-xml-to-js-6c6c60f7-c6ac-11ed-b32c-3e40d30925cf in project smooth-keel-381016, in region us-west1, with image 2.0, with labels {goog-datafusion-version=6_8, cdap-version=6_8_1-1677149596172, goog-datafusion-edition=basic}, endpoint dataproc.googleapis.com:443
+2023-03-19 23:19:00,295 - ERROR [provisioning-task-0:i.c.c.i.p.t.ProvisioningTask@156] - PROVISION task failed in REQUESTING_CREATE state for program run program_run:default.xml-to-json-141KB.-SNAPSHOT.workflow.DataPipelineWorkflow.6c6c60f7-c6ac-11ed-b32c-3e40d30925cf due to Dataproc operation failure: INVALID_ARGUMENT: Multiple validation errors:
+ - Insufficient 'CPUS' quota. Requested 6.0, available 4.0.
+ - Insufficient 'IN_USE_ADDRESSES' quota. Requested 3.0, available 2.0.
+ - This request exceeds CPU quota. Some things to try: request fewer workers (a minimum of 2 is required), use smaller master and/or worker machine types (such as n1-standard-2).
+For troubleshooting Dataproc errors, refer to https://cloud.google.com/dataproc/docs/troubleshooting
+Caused by: io.grpc.StatusRuntimeException: INVALID_ARGUMENT: Multiple validation errors:
+ - Insufficient 'CPUS' quota. Requested 6.0, available 4.0.
+ - Insufficient 'IN_USE_ADDRESSES' quota. Requested 3.0, available 2.0.
+ - This request exceeds CPU quota. Some things to try: request fewer workers (a minimum of 2 is required), use smaller master and/or worker machine types (such as n1-standard-2).
+Caused by: INVALID_ARGUMENT: Multiple validation errors:
+ - Insufficient 'CPUS' quota. Requested 6.0, available 4.0.
+ - Insufficient 'IN_USE_ADDRESSES' quota. Requested 3.0, available 2.0.
+ - This request exceeds CPU quota. Some things to try: request fewer workers (a minimum of 2 is required), use smaller master and/or worker machine types (such as n1-standard-2)..
+io.cdap.cdap.runtime.spi.provisioner.dataproc.DataprocRuntimeException: Dataproc operation failure: INVALID_ARGUMENT: Multiple validation errors:
+ - Insufficient 'CPUS' quota. Requested 6.0, available 4.0.
+ - Insufficient 'IN_USE_ADDRESSES' quota. Requested 3.0, available 2.0.
+ - This request exceeds CPU quota. Some things to try: request fewer workers (a minimum of 2 is required), use smaller master and/or worker machine types (such as n1-standard-2).
+For troubleshooting Dataproc errors, refer to https://cloud.google.com/dataproc/docs/troubleshooting
+	at io.cdap.cdap.runtime.spi.provisioner.dataproc.DataprocClient.handleApiException(DataprocClient.java:905)
+	at io.cdap.cdap.runtime.spi.provisioner.dataproc.DataprocClient.createCluster(DataprocClient.java:321)
+	at io.cdap.cdap.runtime.spi.provisioner.dataproc.DataprocProvisioner.createCluster(DataprocProvisioner.java:207)
+	at io.cdap.cdap.internal.provision.task.ClusterCreateSubtask.execute(ClusterCreateSubtask.java:44)
+	at io.cdap.cdap.internal.provision.task.ProvisioningSubtask.execute(ProvisioningSubtask.java:54)
+	at io.cdap.cdap.internal.provision.task.ProvisioningTask.lambda$executeOnce$1(ProvisioningTask.java:128)
+	at io.cdap.cdap.common.service.Retries.lambda$callWithRetries$2(Retries.java:186)
+	at io.cdap.cdap.common.service.Retries.callWithRetries(Retries.java:218)
+	at io.cdap.cdap.common.service.Retries.callWithRetries(Retries.java:186)
+	at io.cdap.cdap.common.service.Retries.callWithInterruptibleRetries(Retries.java:294)
+	at io.cdap.cdap.internal.provision.task.ProvisioningTask.executeOnce(ProvisioningTask.java:128)
+	at io.cdap.cdap.internal.provision.ProvisioningService.lambda$null$17(ProvisioningService.java:652)
+	at io.cdap.cdap.internal.provision.ProvisioningService.callWithProgramLogging(ProvisioningService.java:883)
+	at io.cdap.cdap.internal.provision.ProvisioningService.lambda$null$18(ProvisioningService.java:650)
+	at io.cdap.cdap.common.async.KeyedExecutor$2.run(KeyedExecutor.java:99)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+	Suppressed: io.cdap.cdap.api.retry.RetryFailedException: Retry failed. Encountered non retryable exception.
+		at io.cdap.cdap.common.service.Retries.callWithRetries(Retries.java:225)
+		... 14 common frames omitted
+Caused by: com.google.api.gax.rpc.InvalidArgumentException: io.grpc.StatusRuntimeException: INVALID_ARGUMENT: Multiple validation errors:
+ - Insufficient 'CPUS' quota. Requested 6.0, available 4.0.
+ - Insufficient 'IN_USE_ADDRESSES' quota. Requested 3.0, available 2.0.
+ - This request exceeds CPU quota. Some things to try: request fewer workers (a minimum of 2 is required), use smaller master and/or worker machine types (such as n1-standard-2).
+	at com.google.api.gax.rpc.ApiExceptionFactory.createException(ApiExceptionFactory.java:47)
+	at com.google.api.gax.grpc.GrpcApiExceptionFactory.create(GrpcApiExceptionFactory.java:72)
+	at com.google.api.gax.grpc.GrpcApiExceptionFactory.create(GrpcApiExceptionFactory.java:60)
+	at com.google.api.gax.grpc.GrpcExceptionCallable$ExceptionTransformingFuture.onFailure(GrpcExceptionCallable.java:97)
+	at com.google.api.core.ApiFutures$1.onFailure(ApiFutures.java:67)
+	at com.google.common.util.concurrent.Futures$4.run(Futures.java:1123)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:435)
+	at com.google.common.util.concurrent.AbstractFuture.executeListener(AbstractFuture.java:900)
+	at com.google.common.util.concurrent.AbstractFuture.complete(AbstractFuture.java:811)
+	at com.google.common.util.concurrent.AbstractFuture.setException(AbstractFuture.java:675)
+	at io.grpc.stub.ClientCalls$GrpcFuture.setException(ClientCalls.java:563)
+	at io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:533)
+	at io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39)
+	at io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23)
+	at io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40)
+	at com.google.api.gax.grpc.ChannelPool$ReleasingClientCall$1.onClose(ChannelPool.java:535)
+	at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:562)
+	at io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:70)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:743)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:722)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+	... 3 common frames omitted
+Caused by: io.grpc.StatusRuntimeException: INVALID_ARGUMENT: Multiple validation errors:
+ - Insufficient 'CPUS' quota. Requested 6.0, available 4.0.
+ - Insufficient 'IN_USE_ADDRESSES' quota. Requested 3.0, available 2.0.
+ - This request exceeds CPU quota. Some things to try: request fewer workers (a minimum of 2 is required), use smaller master and/or worker machine types (such as n1-standard-2).
+	at io.grpc.Status.asRuntimeException(Status.java:535)
+	... 14 common frames omitted
+2023-03-19 23:19:00,323 - DEBUG [provisioning-task-0:i.c.c.i.p.t.ProvisioningTask@165] - Terminated PROVISION task for program run program_run:default.xml-to-json-141KB.-SNAPSHOT.workflow.DataPipelineWorkflow.6c6c60f7-c6ac-11ed-b32c-3e40d30925cf due to exception.
