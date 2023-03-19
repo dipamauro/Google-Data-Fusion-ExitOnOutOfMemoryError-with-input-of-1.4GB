@@ -1,0 +1,138 @@
+{
+    "artifact": {
+        "name": "cdap-data-pipeline",
+        "version": "6.8.1",
+        "scope": "SYSTEM"
+    },
+    "description": "Data Pipeline Application",
+    "name": "xml-to-json-141KB",
+    "change": {
+        "description": ""
+    },
+    "parentVersion": "-SNAPSHOT",
+    "config": {
+        "resources": {
+            "memoryMB": 2048,
+            "virtualCores": 1
+        },
+        "driverResources": {
+            "memoryMB": 2048,
+            "virtualCores": 1
+        },
+        "connections": [
+            {
+                "from": "GCSFile",
+                "to": "Wrangler"
+            },
+            {
+                "from": "Wrangler",
+                "to": "GCS2_141KB"
+            }
+        ],
+        "postActions": [],
+        "properties": {},
+        "processTimingEnabled": true,
+        "stageLoggingEnabled": true,
+        "stages": [
+            {
+                "name": "GCSFile",
+                "plugin": {
+                    "name": "GCSFile",
+                    "type": "batchsource",
+                    "label": "GCSFile",
+                    "artifact": {
+                        "name": "google-cloud",
+                        "version": "0.21.1",
+                        "scope": "SYSTEM"
+                    },
+                    "properties": {
+                        "format": "blob",
+                        "path": "gs://datafusionsource/OriginalOrderFile_costruito-141KB.xml",
+                        "connection": "${conn(Cloud Storage Default)}",
+                        "fileEncoding": "UTF-8",
+                        "useConnection": "true",
+                        "referenceName": "datafusionsource.OriginalOrderFile_costruito-141KB.xml",
+                        "schema": "{\"type\":\"record\",\"name\":\"blob\",\"fields\":[{\"name\":\"body\",\"type\":\"bytes\"}]}",
+                        "sampleSize": "1000",
+                        "filenameOnly": "false",
+                        "recursive": "false",
+                        "ignoreNonExistingFolders": "false",
+                        "encrypted": "false"
+                    }
+                },
+                "outputSchema": "{\"type\":\"record\",\"name\":\"blob\",\"fields\":[{\"name\":\"body\",\"type\":\"bytes\"}]}",
+                "id": "GCSFile"
+            },
+            {
+                "name": "Wrangler",
+                "plugin": {
+                    "name": "Wrangler",
+                    "type": "transform",
+                    "label": "Wrangler",
+                    "artifact": {
+                        "name": "wrangler-transform",
+                        "version": "4.8.1",
+                        "scope": "SYSTEM"
+                    },
+                    "properties": {
+                        "directives": "set-type :body string\nparse-xml-to-json :body 1",
+                        "field": "*",
+                        "precondition": "false",
+                        "workspaceId": "49439f47-64c6-41c1-bfc0-01b1b0f8a947",
+                        "schema": "{\"type\":\"record\",\"name\":\"record\",\"fields\":[{\"name\":\"body_Root\",\"type\":{\"type\":\"record\",\"name\":\"body_RootE1624986968BED06FAE6FA12F7DA8AEF\",\"fields\":[{\"name\":\"Orders\",\"type\":{\"type\":\"record\",\"name\":\"body_Root.Orders045AFAF394F2BE611978EE4472DE0AD9\",\"fields\":[{\"name\":\"Order\",\"type\":[{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"body_Root.Orders.Order04F9827B95F60717CCAA41E22410DC19\",\"fields\":[{\"name\":\"RequiredDate\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipInfo\",\"type\":{\"type\":\"record\",\"name\":\"body_Root.Orders.Order.ShipInfoC17B5ECD132C09B0FD7B6499B3DCEC2D\",\"fields\":[{\"name\":\"ShipName\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShippedDate\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipCity\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipAddress\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipVia\",\"type\":[\"long\",\"null\"]},{\"name\":\"ShipPostalCode\",\"type\":[\"long\",\"null\"]},{\"name\":\"ShipCountry\",\"type\":[\"string\",\"null\"]},{\"name\":\"Freight\",\"type\":[\"double\",\"null\"]},{\"name\":\"ShipRegion\",\"type\":[\"string\",\"null\"]}]}},{\"name\":\"CustomerID\",\"type\":[\"string\",\"null\"]},{\"name\":\"EmployeeID\",\"type\":[\"long\",\"null\"]},{\"name\":\"OrderDate\",\"type\":[\"string\",\"null\"]}]}},\"null\"]}]}},{\"name\":\"xmlns\",\"type\":[\"string\",\"null\"]}]}}]}",
+                        "on-error": "fail-pipeline"
+                    }
+                },
+                "outputSchema": "{\"type\":\"record\",\"name\":\"record\",\"fields\":[{\"name\":\"body_Root\",\"type\":{\"type\":\"record\",\"name\":\"body_RootE1624986968BED06FAE6FA12F7DA8AEF\",\"fields\":[{\"name\":\"Orders\",\"type\":{\"type\":\"record\",\"name\":\"body_Root.Orders045AFAF394F2BE611978EE4472DE0AD9\",\"fields\":[{\"name\":\"Order\",\"type\":[{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"body_Root.Orders.Order04F9827B95F60717CCAA41E22410DC19\",\"fields\":[{\"name\":\"RequiredDate\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipInfo\",\"type\":{\"type\":\"record\",\"name\":\"body_Root.Orders.Order.ShipInfoC17B5ECD132C09B0FD7B6499B3DCEC2D\",\"fields\":[{\"name\":\"ShipName\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShippedDate\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipCity\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipAddress\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipVia\",\"type\":[\"long\",\"null\"]},{\"name\":\"ShipPostalCode\",\"type\":[\"long\",\"null\"]},{\"name\":\"ShipCountry\",\"type\":[\"string\",\"null\"]},{\"name\":\"Freight\",\"type\":[\"double\",\"null\"]},{\"name\":\"ShipRegion\",\"type\":[\"string\",\"null\"]}]}},{\"name\":\"CustomerID\",\"type\":[\"string\",\"null\"]},{\"name\":\"EmployeeID\",\"type\":[\"long\",\"null\"]},{\"name\":\"OrderDate\",\"type\":[\"string\",\"null\"]}]}},\"null\"]}]}},{\"name\":\"xmlns\",\"type\":[\"string\",\"null\"]}]}}]}",
+                "inputSchema": [
+                    {
+                        "name": "GCSFile",
+                        "schema": "{\"type\":\"record\",\"name\":\"blob\",\"fields\":[{\"name\":\"body\",\"type\":\"bytes\"}]}"
+                    }
+                ],
+                "id": "Wrangler"
+            },
+            {
+                "name": "GCS2_141KB",
+                "plugin": {
+                    "name": "GCS",
+                    "type": "batchsink",
+                    "label": "GCS2_141KB",
+                    "artifact": {
+                        "name": "google-cloud",
+                        "version": "0.21.1",
+                        "scope": "SYSTEM"
+                    },
+                    "properties": {
+                        "useConnection": "true",
+                        "referenceName": "output-141KB.",
+                        "path": "gs://datafusionsource/",
+                        "suffix": "yyyy-MM-dd-HH-mm",
+                        "format": "json",
+                        "location": "us",
+                        "contentType": "application/json",
+                        "schema": "{\"type\":\"record\",\"name\":\"text\",\"fields\":[{\"name\":\"body\",\"type\":\"string\"}]}",
+                        "connection": "${conn(Cloud Storage Default)}"
+                    }
+                },
+                "outputSchema": "{\"type\":\"record\",\"name\":\"text\",\"fields\":[{\"name\":\"body\",\"type\":\"string\"}]}",
+                "inputSchema": [
+                    {
+                        "name": "Wrangler",
+                        "schema": "{\"type\":\"record\",\"name\":\"record\",\"fields\":[{\"name\":\"body_Root\",\"type\":{\"type\":\"record\",\"name\":\"body_RootE1624986968BED06FAE6FA12F7DA8AEF\",\"fields\":[{\"name\":\"Orders\",\"type\":{\"type\":\"record\",\"name\":\"body_Root.Orders045AFAF394F2BE611978EE4472DE0AD9\",\"fields\":[{\"name\":\"Order\",\"type\":[{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"body_Root.Orders.Order04F9827B95F60717CCAA41E22410DC19\",\"fields\":[{\"name\":\"RequiredDate\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipInfo\",\"type\":{\"type\":\"record\",\"name\":\"body_Root.Orders.Order.ShipInfoC17B5ECD132C09B0FD7B6499B3DCEC2D\",\"fields\":[{\"name\":\"ShipName\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShippedDate\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipCity\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipAddress\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipVia\",\"type\":[\"long\",\"null\"]},{\"name\":\"ShipPostalCode\",\"type\":[\"long\",\"null\"]},{\"name\":\"ShipCountry\",\"type\":[\"string\",\"null\"]},{\"name\":\"Freight\",\"type\":[\"double\",\"null\"]},{\"name\":\"ShipRegion\",\"type\":[\"string\",\"null\"]}]}},{\"name\":\"CustomerID\",\"type\":[\"string\",\"null\"]},{\"name\":\"EmployeeID\",\"type\":[\"long\",\"null\"]},{\"name\":\"OrderDate\",\"type\":[\"string\",\"null\"]}]}},\"null\"]}]}},{\"name\":\"xmlns\",\"type\":[\"string\",\"null\"]}]}}]}"
+                    }
+                ],
+                "id": "GCS2_141KB"
+            }
+        ],
+        "schedule": "0 1 */1 * *",
+        "engine": "spark",
+        "numOfRecordsPreview": 100,
+        "rangeRecordsPreview": {
+            "min": 1,
+            "max": "5000"
+        },
+        "description": "Data Pipeline Application",
+        "maxConcurrentRuns": 1
+    }
+}
