@@ -1,0 +1,181 @@
+{
+    "artifact": {
+        "name": "cdap-data-pipeline",
+        "version": "6.8.1",
+        "scope": "SYSTEM",
+        "label": "Data Pipeline - Batch"
+    },
+    "description": "",
+    "name": "con-xml-parser-e-xml-to-json-string",
+    "change": {
+        "description": ""
+    },
+    "parentVersion": "",
+    "config": {
+        "resources": {
+            "memoryMB": 2048,
+            "virtualCores": 1
+        },
+        "driverResources": {
+            "memoryMB": 2048,
+            "virtualCores": 1
+        },
+        "connections": [
+            {
+                "from": "GCS",
+                "to": "XMLParser"
+            },
+            {
+                "from": "XMLParser",
+                "to": "XML to Json String"
+            },
+            {
+                "from": "XML to Json String",
+                "to": "GCS2"
+            }
+        ],
+        "comments": [],
+        "postActions": [],
+        "properties": {},
+        "processTimingEnabled": true,
+        "stageLoggingEnabled": false,
+        "stages": [
+            {
+                "name": "GCS",
+                "plugin": {
+                    "name": "GCSFile",
+                    "type": "batchsource",
+                    "label": "GCS",
+                    "artifact": {
+                        "name": "google-cloud",
+                        "version": "0.21.1",
+                        "scope": "SYSTEM"
+                    },
+                    "properties": {
+                        "useConnection": "true",
+                        "connection": "${conn(Cloud Storage Default)}",
+                        "referenceName": "datafusionsource.OriginalOrderFile_costruito-141KB.xml",
+                        "path": "gs://datafusionsource/OriginalOrderFile_costruito-141KB.xml",
+                        "format": "text",
+                        "sampleSize": "1000",
+                        "filenameOnly": "false",
+                        "recursive": "false",
+                        "ignoreNonExistingFolders": "false",
+                        "encrypted": "false",
+                        "fileEncoding": "UTF-8",
+                        "schema": "{\"type\":\"record\",\"name\":\"etlSchemaBody\",\"fields\":[{\"name\":\"body\",\"type\":[\"string\",\"null\"]}]}"
+                    }
+                },
+                "outputSchema": "{\"type\":\"record\",\"name\":\"etlSchemaBody\",\"fields\":[{\"name\":\"body\",\"type\":[\"string\",\"null\"]}]}",
+                "id": "GCS"
+            },
+            {
+                "name": "XMLParser",
+                "plugin": {
+                    "name": "XMLParser",
+                    "type": "transform",
+                    "label": "XMLParser",
+                    "artifact": {
+                        "name": "transform-plugins",
+                        "version": "2.10.1",
+                        "scope": "SYSTEM"
+                    },
+                    "properties": {
+                        "input": "body",
+                        "encoding": "UTF-8",
+                        "xPathMappings": "Orders:Root%2FOrders,Order:Root%2FOrders%2FOrder,CustomerID:Root%2FOrders%2FOrder%2FCustomerID,EmployeeID:Root%2FOrders%2FOrder%2FEmployeeID,OrderDate:Root%2FOrders%2FOrder%2FOrderDate,RequiredDate:Root%2FOrders%2FOrder%2FRequiredDate,ShipInfo:Root%2FOrders%2FOrder%2FShipInfo,ShipVia:Root%2FOrders%2FOrder%2FShipInfo%2FShipVia,Freight:Root%2FOrders%2FOrder%2FShipInfo%2FFreight,ShipName:Root%2FOrders%2FOrder%2FShipInfo%2FShipName,ShipAddress:Root%2FOrders%2FOrder%2FShipInfo%2FShipAddress,ShipCity:Root%2FOrders%2FOrder%2FShipInfo%2FShipCity,ShipRegion:Root%2FOrders%2FOrder%2FShipInfo%2FShipRegion,ShipPostalCode:Root%2FOrders%2FOrder%2FShipInfo%2FShipPostalCode,ShipCountry:Root%2FOrders%2FOrder%2FShipInfo%2FShipCountry",
+                        "fieldTypeMapping": "Orders:string,Order:string,CustomerID:string,EmployeeID:string,OrderDate:string,RequiredDate:string,ShipInfo:string,ShipVia:string,Freight:string,ShipName:string,ShipAddress:bytes,ShipCity:string,ShipRegion:string,ShipPostalCode:string,ShipCountry:string",
+                        "processOnError": "Exit on error",
+                        "failOnArray": "false",
+                        "disallowDocTypeDTD": "true"
+                    }
+                },
+                "outputSchema": "{\"type\":\"record\",\"name\":\"record\",\"fields\":[{\"name\":\"Orders\",\"type\":[\"string\",\"null\"]},{\"name\":\"Order\",\"type\":[\"string\",\"null\"]},{\"name\":\"CustomerID\",\"type\":[\"string\",\"null\"]},{\"name\":\"EmployeeID\",\"type\":[\"string\",\"null\"]},{\"name\":\"OrderDate\",\"type\":[\"string\",\"null\"]},{\"name\":\"RequiredDate\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipInfo\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipVia\",\"type\":[\"string\",\"null\"]},{\"name\":\"Freight\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipName\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipAddress\",\"type\":[\"bytes\",\"null\"]},{\"name\":\"ShipCity\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipRegion\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipPostalCode\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipCountry\",\"type\":[\"string\",\"null\"]}]}",
+                "inputSchema": [
+                    {
+                        "name": "GCS",
+                        "schema": "{\"type\":\"record\",\"name\":\"etlSchemaBody\",\"fields\":[{\"name\":\"body\",\"type\":[\"string\",\"null\"]}]}"
+                    }
+                ],
+                "id": "XMLParser"
+            },
+            {
+                "name": "XML to Json String",
+                "plugin": {
+                    "name": "XMLToJSON",
+                    "type": "transform",
+                    "label": "XML to Json String",
+                    "artifact": {
+                        "name": "transform-plugins",
+                        "version": "2.10.1",
+                        "scope": "SYSTEM"
+                    },
+                    "properties": {
+                        "inputField": "ShipAddress",
+                        "outputField": "json_body",
+                        "schema": "{\"type\":\"record\",\"name\":\"etlSchemaBody\",\"fields\":[{\"name\":\"body\",\"type\":[\"string\",\"null\"]}]}"
+                    }
+                },
+                "information": {
+                    "comments": {
+                        "list": [
+                            {
+                                "content": "",
+                                "user": null,
+                                "createDate": 1679278747159
+                            }
+                        ]
+                    }
+                },
+                "outputSchema": "{\"type\":\"record\",\"name\":\"etlSchemaBody\",\"fields\":[{\"name\":\"body\",\"type\":[\"string\",\"null\"]}]}",
+                "inputSchema": [
+                    {
+                        "name": "XMLParser",
+                        "schema": "{\"type\":\"record\",\"name\":\"record\",\"fields\":[{\"name\":\"Orders\",\"type\":[\"string\",\"null\"]},{\"name\":\"Order\",\"type\":[\"string\",\"null\"]},{\"name\":\"CustomerID\",\"type\":[\"string\",\"null\"]},{\"name\":\"EmployeeID\",\"type\":[\"string\",\"null\"]},{\"name\":\"OrderDate\",\"type\":[\"string\",\"null\"]},{\"name\":\"RequiredDate\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipInfo\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipVia\",\"type\":[\"string\",\"null\"]},{\"name\":\"Freight\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipName\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipAddress\",\"type\":[\"bytes\",\"null\"]},{\"name\":\"ShipCity\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipRegion\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipPostalCode\",\"type\":[\"string\",\"null\"]},{\"name\":\"ShipCountry\",\"type\":[\"string\",\"null\"]}]}"
+                    }
+                ],
+                "id": "XML-to-Json-String"
+            },
+            {
+                "name": "GCS2",
+                "plugin": {
+                    "name": "GCS",
+                    "type": "batchsink",
+                    "label": "GCS2",
+                    "artifact": {
+                        "name": "google-cloud",
+                        "version": "0.21.1",
+                        "scope": "SYSTEM"
+                    },
+                    "properties": {
+                        "useConnection": "true",
+                        "connection": "${conn(Cloud Storage Default)}",
+                        "referenceName": "xml-to-json-string",
+                        "path": "gs://datafusionsource/",
+                        "suffix": "yyyy-MM-dd-HH-mm",
+                        "format": "json",
+                        "location": "us",
+                        "contentType": "application/octet-stream",
+                        "schema": "{\"type\":\"record\",\"name\":\"etlSchemaBody\",\"fields\":[{\"name\":\"body\",\"type\":[\"string\",\"null\"]}]}"
+                    }
+                },
+                "outputSchema": "{\"type\":\"record\",\"name\":\"etlSchemaBody\",\"fields\":[{\"name\":\"body\",\"type\":[\"string\",\"null\"]}]}",
+                "inputSchema": [
+                    {
+                        "name": "XML to Json String",
+                        "schema": "{\"type\":\"record\",\"name\":\"etlSchemaBody\",\"fields\":[{\"name\":\"body\",\"type\":[\"string\",\"null\"]}]}"
+                    }
+                ],
+                "id": "GCS2"
+            }
+        ],
+        "schedule": "0 1 */1 * *",
+        "engine": "spark",
+        "numOfRecordsPreview": 100,
+        "rangeRecordsPreview": {
+            "min": 1,
+            "max": "5000"
+        },
+        "maxConcurrentRuns": 1
+    }
+}
